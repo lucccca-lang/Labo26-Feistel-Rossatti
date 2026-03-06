@@ -40,18 +40,22 @@ int main (){
 
     Empleado empleado2;
     empleado2.nombre = "Lucca";
+    empleado2.apellido="rossatti";
     empleado2.salario = 44455;
 
     Empleado empleado1;
     empleado1.nombre ="Facu";
+    empleado1.apellido="feistel";
     empleado1.salario=856000;
 
     Empleado empleado3;
     empleado3.nombre ="Pablo";
+    empleado3.apellido= "gutierrez";
     empleado3.salario=56000;
 
     Empleado empleado4;
     empleado4.nombre ="Tomas";
+    empleado4.apellido="perez";
     empleado4.salario=66000;
 
     trabajadores.push_back(empleado1);
@@ -62,11 +66,13 @@ int main (){
 
     resu = empleadoConMayorSueldo(trabajadores, vacio);
     cout<<"Nombre mayor salario: "<< resu.nombre <<endl;
+    cout<<"apellido: "<<resu.apellido <<endl;
     cout<<"Salario mayor: "<< resu.salario<<endl;
 
     for (int j = 0;j< vacio.size();j++){
 
         cout<<"Nombre: "<< vacio[j].nombre <<endl;
+        cout<<"Apellido: "<< vacio[j].apellido <<endl;
         cout<<"Salario: "<< vacio[j].salario<<endl;
     }
    
