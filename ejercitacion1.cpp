@@ -68,7 +68,6 @@ int main (){
 
         cout<<"Nombre: "<< vacio[j].nombre <<endl;
         cout<<"Salario: "<< vacio[j].salario<<endl;
-    
     }
    
 }
