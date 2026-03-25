@@ -1,21 +1,24 @@
 package Unidad_0;
 
 import java.util.Scanner;
-import  java.util.li
+
+
 public class DiaLaboral {
     public static void main(String[] args) {
 
+        System.out.println("ingrese un dia de la semana y le diremos si es laboral: ");
         Scanner scanner = new Scanner(System.in);
-        List<String>DiasLaboral = List.of("lunes","martes","miercoles","jueves","viernes");
-        String diaSemana = scanner.next().toLowerCase();
+        String dia = scanner.next();
+        dia = dia.toLowerCase();
 
-
-
-        if(DiasLaboral.contains(diaSemana)){
-            System.out.println("Es un dia laboral");
+        if(dia.equals("sabado") || dia.equals("domingo"))
+        {
+            System.out.println("no es un dia laboral");
         }
-        else {
-            System.out.println("No es un dia laboral");
+
+        else
+        {
+            System.out.println("es un dia laboral");
         }
     }
 }
