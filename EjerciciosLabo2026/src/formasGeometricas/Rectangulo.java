@@ -1,6 +1,6 @@
-package FormasGeometricas;
+package formasGeometricas;
 
-import static java.lang.Math.pow;
+import java.sql.Driver;
 
 public class Rectangulo {
     private double base;
@@ -20,13 +20,15 @@ public class Rectangulo {
         return altura;
     }
 
+
     public void setAltura(double altura) {
         this.altura = altura;
     }
-
     public void setBase(double base) {
         this.base = base;
     }
+
+
 
     public double calculoArea(){
         double area;
@@ -41,3 +43,11 @@ public class Rectangulo {
     }
 
 }
+/*
+
+
+lucca:
+tengo ciudadania italiana
+soy de river
+
+ */

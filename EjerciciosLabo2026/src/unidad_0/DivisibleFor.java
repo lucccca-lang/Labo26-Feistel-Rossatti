@@ -1,4 +1,4 @@
-package Unidad_0;
+package unidad_0;
 
 public class DivisibleFor {
     public static void main(String[] args) {

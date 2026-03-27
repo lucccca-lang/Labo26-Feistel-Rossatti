@@ -1,4 +1,4 @@
-package FormasGeometricas;
+package formasGeometricas;
 
 import static java.lang.Math.pow;
 

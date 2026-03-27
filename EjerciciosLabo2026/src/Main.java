@@ -1,5 +1,4 @@
-import FormasGeometricas.Circulo;
-import FormasGeometricas.Rectangulo;
+import formasGeometricas.Rectangulo;
 
 public class Main {
     public static void main(String[] args) {
@@ -17,7 +16,7 @@ public class Main {
         System.out.println("el area del circulo 2 es: " + c2.calcularArea());
         System.out.println("el perimetro del ciculo 1 es: " + c1.calcularPerimetro());
         System.out.println("el perimetro del ciculo 2 es: " + c2.calcularPerimetro());
-        */
+
 
         Rectangulo r1 = new Rectangulo(3,5);
 
@@ -25,6 +24,10 @@ public class Main {
         System.out.println("altura del rectangulo 1: " + r1.getAltura());
         System.out.println("el area del rectangulo 1 es: " + r1.calculoArea());
         System.out.println("el perimetro del rectangulo 1 es: " + r1.calculoPerimetro());
+        */
+
+         Coche auto1 = new Coche("Volkswagen  ", "Suran  ", "Rojo  ", 0);
+        System.out.println(auto1.getMarca() + auto1.getColor() + auto1.getModelo() + auto1.getVelocidad());
 
     }
 }
