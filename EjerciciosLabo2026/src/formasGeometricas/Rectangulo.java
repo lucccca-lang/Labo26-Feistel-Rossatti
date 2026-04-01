@@ -43,11 +43,3 @@ public class Rectangulo {
     }
 
 }
-/*
-
-
-lucca:
-tengo ciudadania italiana
-soy de river
-
- */

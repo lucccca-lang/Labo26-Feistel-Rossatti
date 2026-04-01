@@ -1,4 +1,4 @@
-import formasGeometricas.Rectangulo;
+import vehiculos.Coche;
 
 public class Main {
     public static void main(String[] args) {
