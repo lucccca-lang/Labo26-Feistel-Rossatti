@@ -224,5 +224,46 @@ public class Fecha {
         return esIgual;
     }
 
+    public boolean menorQue(Fecha fecha){
+        boolean esMenor;
 
+        if (anio < fecha.getAnio())
+        {
+            esMenor = true;
+        }
+        else if(mes < fecha.getMes() && anio == fecha.getAnio()){
+            esMenor = true;
+        }
+        else if (dia < fecha.getDia() && mes == fecha.getMes() && anio == fecha.getAnio())
+        {
+            esMenor = true;
+        }
+        else {
+            esMenor = false;
+        }
+
+        return esMenor;
+    }
+
+    public boolean mayorQue(Fecha fecha){
+        boolean esMayor;
+
+        if (anio > fecha.getAnio())
+        {
+            esMayor = true;
+        }
+        else if(mes > fecha.getMes() && anio == fecha.getAnio()){
+            esMayor = true;
+        }
+        else if (dia > fecha.getDia() && mes == fecha.getMes() && anio == fecha.getAnio())
+        {
+            esMayor = true;
+        }
+        else {
+            esMayor = false;
+        }
+
+        return esMayor;
+
+    }
 }
