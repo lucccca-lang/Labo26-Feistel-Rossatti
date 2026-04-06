@@ -193,8 +193,35 @@ public class Fecha {
         DayOfWeek diaSemana = fecha.getDayOfWeek();
         YearMonth ym = YearMonth.of(anio,mes);
         System.out.println(diaSemana + " " +dia+" " + ym);
+    }
+
+    public void siguiente() {
+        LocalDate fecha = LocalDate.of(anio, mes, dia);
+        LocalDate maniana = fecha.plusDays(1);
+        anio = maniana.getYear();
+        mes = maniana.getMonthValue();
+        dia = maniana.getDayOfMonth();
+    }
+
+    public void anterior() {
+        LocalDate fecha = LocalDate.of(anio, mes, dia);
+        LocalDate ayer = fecha.minusDays(1);
+        anio = ayer.getYear();
+        mes = ayer.getMonthValue();
+        dia = ayer.getDayOfMonth();
+    }
+
+    public boolean igualQue(Fecha fecha){
+        boolean esIgual;
+        if (dia == fecha.getDia() && mes == fecha.getMes() && anio == fecha.getAnio()){
+            esIgual = true;
+        }
+        else {
+            esIgual = false;
+        }
 
 
+        return esIgual;
     }
 
 
