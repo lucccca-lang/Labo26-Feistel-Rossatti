@@ -1,4 +1,4 @@
-package SeresVivos;
+package seresVivos;
 
 public class Personas {
     private String nombre;
