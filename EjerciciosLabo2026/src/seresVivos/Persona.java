@@ -1,17 +1,17 @@
 package seresVivos;
 
-public class Personas {
+public class Persona {
     private String nombre;
     private int edad;
     private String direccion;
 
-    public Personas(String nombre, int edad, String direccion){
+    public Persona(String nombre, int edad, String direccion){
         this.nombre = nombre;
         this.edad = edad;
         this.direccion = direccion;
     }
 
-    public Personas(){
+    public Persona(){
         nombre = "Martin";
         edad = 15;
         direccion = "Olavarria 1456";
@@ -47,7 +47,7 @@ public class Personas {
     }
 
     public static void main(String[] args) {
-        Personas p1 = new Personas();
+        Persona p1 = new Persona();
         p1.datosPersona();
     }
 }
