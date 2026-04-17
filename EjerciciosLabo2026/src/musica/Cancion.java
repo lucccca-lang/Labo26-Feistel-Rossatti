@@ -7,8 +7,8 @@ import seresVivos.Persona;
         private Persona autor;
 
         public Cancion(){
-            this.titulo = "";
-            this.autor = new Persona("",0,"");
+            this.titulo = "Chau";
+            this.autor = new Persona("Leandro",14,"Urquiza");
         }
 
         public Cancion(String titulo,Persona autor){

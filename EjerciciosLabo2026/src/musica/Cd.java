@@ -1,9 +1,12 @@
 package musica;
 
+import seresVivos.Persona;
+
 import java.util.ArrayList;
 
 public class Cd {
     private ArrayList<Cancion> canciones;
+
 
     public Cd(){
         this.canciones = new ArrayList<>();
@@ -12,7 +15,6 @@ public class Cd {
     public ArrayList<Cancion> getCanciones() {
         return canciones;
     }
-
     public void setCanciones(ArrayList<Cancion> canciones) {
         this.canciones = canciones;
     }
@@ -36,8 +38,23 @@ public class Cd {
         this.canciones.add(cancion);
     }
 
-    public elimina(int posicion){
-        this.ca
+    public void elimina(int posicion){
+        this.canciones.remove(posicion);
     }
 
+    public void listarCanciones(){
+        for(Cancion canc : canciones){
+            System.out.println(canc.getTitulo());
+        }
+    }
+
+    public static void main(String[] args) {
+        Cd cd1 = new Cd();
+        Cancion can1 = new Cancion();
+        Cancion can2 = new Cancion("Hola", new Persona());
+        cd1.agrega(can1);
+        cd1.agrega(can2);
+
+        cd1.listarCanciones();
+    }
 }
