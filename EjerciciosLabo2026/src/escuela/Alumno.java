@@ -79,7 +79,24 @@ public class Alumno {
         }
     }
 
-    public float promEdad()
+    public float promNotas(){
+        float promedio = 0;
+        float notaT = 0;
+            for(float not : listaNotas){
+                notaT += not;
+            }
+        promedio = notaT / listaNotas.size();
+            return promedio;
+    }
+
+    public void inscribirMateria(Materia materia){
+        materias.add(materia);
+    }
+
+
+
+
+
     public static void main(String[] args) {
         Alumno a1 = new Alumno();
         a1.agregarNota(5);
