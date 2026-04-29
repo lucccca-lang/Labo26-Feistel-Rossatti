@@ -3,76 +3,77 @@ package deportes;
 import java.util.ArrayList;
 
 public class Equipo {
-    private String nombre;
-    private String campeonato;
-    private ArrayList<Jugador> jugadores;
-    private ArrayList<String> turno;
+    private ArrayList<Participante> jugadores;
+    private ArrayList<String> horariosJuego;
+    private Participante capitan;
 
-    public String getNombre() {
-        return nombre;
+    public Equipo(Participante capitan, ArrayList<String> horarioJuego, ArrayList<Participante> jugadores) {
+        int found = 0;
+        // checkeamos si no se repiten cuando se agregan
+        for (Participante p: jugadores) {
+            if(this.estaEnUso(p.getNumeroCamiseta(),p,jugadores)){
+                found+=1;
+            }
+        }
+        if(found == 0 && jugadores.size() == 11){
+            this.jugadores = jugadores;
+            // checkeamos capitan usando el metodo que filtra
+            this.setCapitan(capitan);
+        }
+        if(this.esHorarioValido(horarioJuego)) {
+            this.horariosJuego = horarioJuego;
+        }
     }
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-    public String getCampeonato() {
-        return campeonato;
-    }
-    public void setCampeonato(String campeonato) {
-        this.campeonato = campeonato;
-    }
-    public ArrayList<Jugador> getJugadores() {
+    public ArrayList<Participante> getJugadores() {
         return jugadores;
     }
-    public void setJugadores(ArrayList<Jugador> jugadores) {
-        this.jugadores = jugadores;
-    }
-    public ArrayList<String> getTurno() {
-        return turno;
-    }
-    public void setTurno(ArrayList<String> turno) {
-        this.turno = turno;
-    }
 
 
-    public void agregarJugador(Jugador jugador){
-        if (cantJugadores() < 11){
-        jugadores.add(jugador);
+    public ArrayList<String> getHorarioJuego() {
+        return horariosJuego;
+    }
+
+    public void setHorarioJuego(ArrayList<String> horarioJuego) {
+        this.horariosJuego = horarioJuego;
+    }
+
+    public Participante getCapitan() {
+        return capitan;
+    }
+
+    public void setCapitan(Participante capitan) {
+        if(this.jugadores.contains(capitan)) {
+            this.capitan = capitan;
         }
     }
 
-    public int cantJugadores() {
-        return jugadores.size();
-    }
-
-    public int cantCapitan(){
-        int cantCapi = 0;
-            for(Jugador cap : jugadores){
-                if(cap.isCapitan()){
-                    cantCapi++;
-                }
+    public  boolean estaEnUso(int numCamisa,Participante ignorando,ArrayList<Participante> jugadores){
+        boolean found = false;
+        for(Participante p: jugadores) {
+            found = p.getNumeroCamiseta() == numCamisa;
+            if(found && !p.equals(ignorando)){
+                return  found;
             }
-        return cantCapi;
-    }
-
-    public boolean dorsalValido(){
-        boolean valido = true;
-            for (Jugador dors : jugadores){
-                for (Jugador dors1 : jugadores){
-                    if (dors.getDorsal() == dors1.getDorsal()) {
-                        valido = false;
-                    }
-                }
-            }
-        return valido;
-    }
-
-    public boolean horarioCargado() {
-        if (turno.isEmpty()) {
-            return false;
         }
-    return true;
+        return  found;
+    }
+    public boolean hasHorarioJuego(String horario){
+        return  this.horariosJuego.contains(horario);
     }
 
-
-
+    private boolean esHorarioValido(ArrayList<String> horarios){
+        ArrayList<String> Disphorarios = new ArrayList<>();
+        Disphorarios.add("mañana");
+        Disphorarios.add("tarde");
+        Disphorarios.add("noche");
+        for(String hora:horarios){
+            if(!(Disphorarios.contains(hora.toLowerCase()))){
+                return  false;
+            }
+        }
+        return  true;
+    }
+    public String JugarPartido(Equipo equipo,int dia,Torneo torneo){
+        return  torneo.agregarPartido(equipo,this,dia);
+    }
 }

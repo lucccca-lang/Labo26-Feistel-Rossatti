@@ -1,43 +1,21 @@
 package escuela;
 
 import fechas.Fecha;
+import seresVivos.Persona;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class Alumno {
-    private String nombre;
-    private String apellido;
-    private LocalDate fechaNac;
+public class Alumno extends Persona {
     private ArrayList<Float> listaNotas;
     private ArrayList<Materia> materias;
 
     public Alumno(){
-        this.nombre = "Jose";
-        this.apellido = "Gomez";
-        this.fechaNac = LocalDate.of(2000, 02, 28);
+        super();
         this.listaNotas = new ArrayList<Float>();
         this.materias = new ArrayList<Materia>();
     }
 
-    public String getNombre() {
-        return nombre;
-    }
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-    public String getApellido() {
-        return apellido;
-    }
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
-    }
-    public LocalDate getFechaNac() {
-        return fechaNac;
-    }
-    public void setFechaNac(LocalDate fechaNac) {
-        this.fechaNac = fechaNac;
-    }
     public ArrayList<Float> getListaNotas() {
         return listaNotas;
     }
@@ -61,22 +39,24 @@ public class Alumno {
         for (float nota : listaNotas) {
             if (meNota > nota) {
                 meNota = nota;
-                return meNota;
+
             }
         }
+        return meNota;
     }
 
 
-    public float mayorNota(){
+    public float mayorNota() {
         float mNota = this.listaNotas.get(0);
 
-        for(float nota : listaNotas){
-            if(mNota < nota){
+        for (float nota : listaNotas) {
+            if (mNota < nota) {
                 mNota = nota;
-                return mNota;
+
 
             }
         }
+        return mNota;
     }
 
     public float promNotas(){
@@ -93,8 +73,11 @@ public class Alumno {
         materias.add(materia);
     }
 
-
-
+    public void mostrarDatos(){
+        super.datosPersona();
+        System.out.println("Las materias de este alumno son: " + getMaterias());
+        System.out.println("las notas de este alumno son: " + getListaNotas());
+    }
 
 
     public static void main(String[] args) {
@@ -102,8 +85,10 @@ public class Alumno {
         a1.agregarNota(5);
         a1.agregarNota(7);
 
+        a1.mostrarDatos();
         System.out.println(a1.menorNota() + " es la menor nota");
         System.out.println(a1.mayorNota() + " es la mayor nota");
+
 
     }
 

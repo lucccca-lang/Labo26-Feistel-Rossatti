@@ -3,68 +3,90 @@ package deportes;
 import java.util.ArrayList;
 
 public class Torneo {
-    private ArrayList<Equipo> equipos;
-    private ArrayList<Partido> partidos;
+    private  ArrayList<Partido> listaPartidos;
+    private ArrayList<Equipo> listaEquipos;
 
-    public ArrayList<Equipo> getEquipos() {
-        return equipos;
-    }
-    public void setEquipos(ArrayList<Equipo> equipos) {
-        this.equipos = equipos;
-    }
-    public ArrayList<Partido> getPartidos() {
-        return partidos;
-    }
-    public void setPartidos(ArrayList<Partido> partidos) {
-        this.partidos = partidos;
-    }
 
-    public void validacion(){
-        for(Equipo eq : equipos){
-            if(eq.cantJugadores() == 11 && eq.cantCapitan() == 1 && eq.dorsalValido() && eq.horarioCargado()){
-                System.out.println("el equipo: " + eq + " es valido para competir");
-            }
-            else{
-                System.out.println("el equipo: " + eq + " no es valido para competir");
-            }
+    public Torneo() {
+        this.listaPartidos = new ArrayList<>();
+        this.listaEquipos =  new ArrayList<>();
+    }
+    private String encontrarMatchHorarios(Equipo equipo1, Equipo equipo2){
+        ArrayList<String> horariosE1 = equipo1.getHorarioJuego();
+        ArrayList<String> horariosE2 = equipo2.getHorarioJuego();
+        if(horariosE1.contains("mañana") && horariosE2.contains("mañana")){
+            return  "mañana";
         }
-    }
-
-    public boolean coincidenEnDispo(Equipo eq1, Equipo eq2){
-        if (eq1.getTurno().contains("mañana") && eq2.getTurno().contains("mañana")){
-            return true;
+        else if(horariosE1.contains("tarde") && horariosE2.contains("tarde")){
+            return  "tarde";
         }
-        else if (eq1.getTurno().contains("tarde") && eq2.getTurno().contains("tarde")){
-            return true;
+        else if(horariosE1.contains("noche") && horariosE2.contains("noche")){
+            return  "noche";
         }
-        if (eq1.getTurno().contains("noche") && eq2.getTurno().contains("noche")){
-            return true;
-        }
-    else {
-        return false;
-        }
-    }
-
-    public String mismoTurno(Equipo eq1, Equipo eq2){
+        else {return  "NOT_FOUND";}
 
     }
+    // op code
+    // 0 success
+    // 1 partido repetido
+    // 2 mismo equipo
+    // 3 partido repetido
+    // 4 un equipo ya juega ese dia
+    // 5 no hay horarios en comun
+    private int esPartidoValido(Equipo equipo1, Equipo equipo2, int fechaPartido){
 
-    public void fixture() {
-        for (Equipo eq1 : equipos) {
-            for (Equipo eq2 : equipos) {
-                if(coincidenEnDispo(eq1,eq2)){
-                   partidos.add(new Partido(eq1,eq2, mismoTurno(eq1,eq2)));
-                }
-                if (eq1 != eq2 && ) {
-
-                }
+        // checkeamos si el equipo esta en la lista
+        // evitamos tener equipos en partidos que no estan
+        if(!(this.listaEquipos.contains(equipo1) && this.listaEquipos.contains(equipo2))){
+            return  1;
+        }
+        // comparamos con "==" ya que no queremos
+        // que manden exactamente el mismo equipo (literalmente el mismo no uno que sea un clon)
+        // por eso comparamos direcciones
+        if(equipo1 == equipo2){
+            return  2;
+        }
+        // checkeamos que la dupla no se repita
+        for(Partido partido : this.listaPartidos ){
+            boolean estaEquipo1 = partido.getEquipo1().equals(equipo1) || partido.getEquipo2().equals(equipo1);
+            boolean estaEquipo2 = partido.getEquipo1().equals(equipo2) || partido.getEquipo2().equals(equipo2);
+            if(estaEquipo1 && estaEquipo2){
+                return  3;
             }
         }
+        // checkeamos que un equipo no juege  mas de un partido en un dia
+        for (Partido partido: this.listaPartidos){
+            boolean estaEquipo1 = partido.getEquipo1().equals(equipo1) || partido.getEquipo2().equals(equipo1);
+            boolean estaEquipo2 = partido.getEquipo1().equals(equipo2) || partido.getEquipo2().equals(equipo2);
+            if(((estaEquipo1 || estaEquipo2) && (fechaPartido == partido.getFechaPartido()))){
+                return  4;
+            }
+        }
+        if(this.encontrarMatchHorarios(equipo1,equipo2).equals("NOT_FOUND")){
+            return  5;
+        }
+        return 0;
     }
 
 
 
+    public String agregarPartido(Equipo equipo1,Equipo equipo2,int fecha){
+        switch (esPartidoValido(equipo1,equipo2,fecha)){
+            case 1:
+                return "Caso repetido";
+            case 2:
+                return  "No se puede enfrentar un equipo con si mismo";
+            case 3:
+                return "Este partido esta repetido";
+            case 4:
+                return "uno de los equipos ya juega ese dia";
+            case 5:
+                return "no hay horarios en comun";
+        }
+        String matchingFecha = this.encontrarMatchHorarios(equipo1,equipo2);
+        Partido partido = new Partido(equipo1,equipo2,fecha,matchingFecha);
+        this.listaPartidos.add(partido);
+        return  "exito";
 
-
-
+    }
 }

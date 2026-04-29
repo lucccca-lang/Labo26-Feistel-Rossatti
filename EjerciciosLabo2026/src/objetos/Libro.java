@@ -1,5 +1,109 @@
 package objetos;
 
-public class Libro {
+import fechas.Fecha;
+import seresVivos.Persona;
 
+public class Libro {
+    private String titulo;
+    private Persona autor;
+    private String isbn;
+    private int cantDePags;
+    private String editorial;
+    private Fecha fechaDePublicacion;
+
+    public Libro(){
+        this.titulo = "Habitos Atomicos";
+        this.autor = new Persona("James Clear", 40, "Washington 1234");
+        this.isbn = "1234-321";
+        this.cantDePags = 400;
+        this.editorial = "Sudamericana";
+        this.fechaDePublicacion= new Fecha();
+    }
+
+    public Libro(String titulo, Persona autor, String isbn, int cantDePags, String editorial, Fecha fechaDePublicacion){
+        this.titulo = titulo;
+        this.autor = autor;
+        this.isbn = isbn;
+        this.cantDePags = cantDePags;
+        this.editorial = editorial;
+        this.fechaDePublicacion= fechaDePublicacion;
+    }
+
+    public Libro(String titulo,Persona autor, int cantDePags, Fecha fechaDePublicacion){
+        this.titulo = titulo;
+        this.autor = autor;
+        this.isbn = "4321-123";
+        this.cantDePags = cantDePags;
+        this.editorial = "Biblos";
+        this.fechaDePublicacion = fechaDePublicacion;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+    public Persona getAutor() {
+        return autor;
+    }
+    public String getIsbn() {
+        return isbn;
+    }
+    public int getCantDePags() {
+        return cantDePags;
+    }
+    public String getEditorial() {
+        return editorial;
+    }
+    public Fecha getFechaDePublicacion() {
+        return fechaDePublicacion;
+    }
+    public void setAutor(Persona autor) {
+        this.autor = autor;
+    }
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+    public void setCantDePags(int cantDePags) {
+        this.cantDePags = cantDePags;
+    }
+    public void setFechaDePublicacion(Fecha fechaDePublicacion) {
+        this.fechaDePublicacion = fechaDePublicacion;
+    }
+    public void setIsbn(String isbn) {
+        this.isbn = isbn;
+    }
+    public void setEditorial(String editorial) {
+        this.editorial = editorial;
+    }
+
+    public void mostrarInfo(){
+        System.out.println("Titulo: " + titulo);
+        System.out.print("Autor: " );
+        autor.datosPersona();
+        System.out.println("ISBN: " + isbn);
+        System.out.println("Cant de Paginas: " + cantDePags);
+        System.out.println("Editorial: " + editorial);
+        System.out.print("fecha.Fecha de Publicacion: ");
+        fechaDePublicacion.corta();
+    }
+
+    public void masViejo(Libro libro){
+        if (fechaDePublicacion.menorQue(libro.getFechaDePublicacion())){
+            System.out.println("El libro " + titulo + " se publico antes que " + libro.getTitulo());
+        }
+        else {
+            System.out.println("El libro " + libro.getTitulo() + " se publico antes");
+        }
+    }
+
+    public static void main(String[] args) {
+        Libro libro = new Libro();
+        Persona autor = new Persona("Mujica Lainez",49,"dasdasd 1213");
+        Libro libro1 = new Libro("aaa", autor, "123-123",302,"abbc", new Fecha());
+        Libro libro2 = new Libro("IT", new Persona("Stephen King",65,"New York 1232"),500,new Fecha(20,5,2009));
+        System.out.println("Getters: " + libro.getTitulo() + libro.getEditorial() + libro.getIsbn() + libro.getAutor().getNombre() + libro.getCantDePags() + libro.getFechaDePublicacion().getDia() + libro.getFechaDePublicacion().getMes() + libro.getFechaDePublicacion().getAnio());
+        libro1.setTitulo("Misteriosa Buenos Aires");
+        System.out.println("Metodo de mostrar libro:");
+        libro2.mostrarInfo();
+        libro2.masViejo(libro1);
+    }
 }
