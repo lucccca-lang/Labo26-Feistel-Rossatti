@@ -9,10 +9,11 @@ public class Persona {
     private int edad;
     private String direccion;
 
-    public Persona(String nombre, int edad, String direccion){
+    public Persona(String nombre,String apellido, String direccion, LocalDate fechaNac){
         this.nombre = nombre;
-        this.edad = edad;
         this.direccion = direccion;
+        this.fechaNac = fechaNac;
+        this.apellido = apellido;
     }
 
     public Persona(){

@@ -1,5 +1,7 @@
 package deportes;
 
+import seresVivos.Participante;
+
 import java.util.ArrayList;
 
 public class Equipo {
