@@ -1,40 +1,21 @@
 package trabajadores;
 
 import objetos.Cuadro;
+import seresVivos.Persona;
 
 import java.time.LocalDate;
 
-public class Restaurador {
-    private String nombre;
-    private String apellido;
+public class Restaurador extends Persona {
     private int dni;
-    private LocalDate fechaNacimiento;
     private int aniosExp;
 
-    public String getNombre() {
-        return nombre;
-    }
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-    public String getApellido() {
-        return apellido;
-    }
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
-    }
     public int getDni() {
         return dni;
     }
     public void setDni(int dni) {
         this.dni = dni;
     }
-    public LocalDate getFechaNacimiento() {
-        return fechaNacimiento;
-    }
-    public void setFechaNacimiento(LocalDate fechaNacimiento) {
-        this.fechaNacimiento = fechaNacimiento;
-    }
+
     public int getAniosExp() {
         return aniosExp;
     }
@@ -43,10 +24,8 @@ public class Restaurador {
     }
 
     public Restaurador(){
-        this.nombre = "Rodrigo";
-        this.apellido = "Gutierrez";
+        super();
         this.dni = 22273824;
-        this.fechaNacimiento = LocalDate.of(1972,04,23);
         this.aniosExp = 24;
     }
 

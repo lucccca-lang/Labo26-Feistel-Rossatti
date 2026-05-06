@@ -2,7 +2,7 @@ package formasGeometricas;
 
 import java.sql.Driver;
 
-public class Rectangulo {
+public class Rectangulo extends FormasGeo{
     private double base;
     private double altura;
 
@@ -29,14 +29,14 @@ public class Rectangulo {
     }
 
 
-
-    public double calculoArea(){
+    @Override
+    public double calcularArea(){
         double area;
         area =  base * altura;
         return area;
     }
-
-    public double calculoPerimetro (){
+    @Override
+    public double calcularPerimetro (){
         double perimetro;
         perimetro = (base + altura) * 2;
         return perimetro;

@@ -1,46 +1,27 @@
 package vehiculos;
 
-public class Coche {
-
-    private String marca;
-    private String modelo;
-    private String color;
+public class Coche extends Vehiculo {
     private double velocidad;
+    private boolean descapotable;
 
-
-    public String getMarca(){
-        return marca;
-    }
-    public String getModelo(){
-        return modelo;
-    }
-    public String getColor(){
-        return color;
-    }
     public double getVelocidad() {
         return velocidad;
-    }
-
-
-    public void setMarca(String marca){
-        this.marca = marca;
-    }
-    public void setModelo(String modelo){
-        this.modelo = modelo;
-    }
-    public void setColor(String color){
-        this.color = color;
     }
     public void setVelocidad(double velocidad) {
         this.velocidad = velocidad;
     }
+    public boolean isDescapotable() {
+        return descapotable;
+    }
+    public void setDescapotable(boolean descapotable) {
+        this.descapotable = descapotable;
+    }
 
 
-    public Coche(String marca, String modelo, String color, double velocidad){
-        this.marca = marca;
-        this.modelo = modelo;
-        this.color = color;
+    public Coche(String marca, String modelo, String color, int cantRuedas, int anioFabricacion, String patente, double velocidad, boolean descapotable){
+        super(marca, modelo, color, cantRuedas, anioFabricacion, patente);
         this.velocidad = velocidad;
+        this.descapotable = descapotable;
     }
 
     public double acelerar (){

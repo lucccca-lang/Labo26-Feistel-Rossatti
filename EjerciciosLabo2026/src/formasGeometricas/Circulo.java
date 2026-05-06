@@ -2,7 +2,7 @@ package formasGeometricas;
 
 import static java.lang.Math.pow;
 
-public class Circulo {
+public class Circulo extends FormasGeo{
     private double radio;
 
     //por defecto
@@ -26,16 +26,20 @@ public class Circulo {
     }
 
     //metodo
-    public double calcularArea (){
+
+    @Override
+    public double calcularArea() {
         double area;
         area =  Math.PI * pow(radio,2);
         return area;
     }
 
+    @Override
     public double calcularPerimetro (){
         double peri;
         peri = 2 * Math.PI * radio;
         return peri;
     }
+
 
 }

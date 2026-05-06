@@ -2,20 +2,16 @@ package vehiculos;
 
 import java.sql.SQLOutput;
 
-public class Submarino {
-    private String nombre;
+public class Submarino extends Vehiculo{
     private int profMax;
     private int profActual;
 
     public Submarino(){
-        this.nombre = "Jose";
+        super();
         this.profMax = -1000;
         this.profActual = 0;
     }
 
-    public String getNombre() {
-        return nombre;
-    }
     public int getProfMax() {
         return profMax;
     }
@@ -25,9 +21,6 @@ public class Submarino {
 
     public void setProfMax(int profMax) {
         this.profMax = profMax;
-    }
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
     }
     public void setProfActual(int profActual) {
         this.profActual = profActual;
@@ -58,7 +51,7 @@ public class Submarino {
     public static void main(String[] args) {
 
         Submarino submarino1 = new Submarino();
-        System.out.println("Nombre: " + submarino1.getNombre() + " " + submarino1.getProfActual() + " " + submarino1.getProfMax());
+        System.out.println("Nombre: " + submarino1.getModelo() + " " + submarino1.getProfActual() + " " + submarino1.getProfMax());
 
         submarino1.sumergir(200);
         submarino1.emerger(100);

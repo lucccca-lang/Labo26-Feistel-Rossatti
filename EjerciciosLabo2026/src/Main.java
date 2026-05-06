@@ -26,10 +26,10 @@ public class Main {
         System.out.println("el area del rectangulo 1 es: " + r1.calculoArea());
         System.out.println("el perimetro del rectangulo 1 es: " + r1.calculoPerimetro());
         */
-
+/*
          Coche auto1 = new Coche("Volkswagen  ", "Suran  ", "Rojo  ", 0);
         System.out.println(auto1.getMarca() + auto1.getColor() + auto1.getModelo() + auto1.getVelocidad());
-
+*/
     }
 }
 
