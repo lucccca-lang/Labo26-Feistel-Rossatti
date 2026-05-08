@@ -40,6 +40,12 @@ public class Vehiculo {
     public void setAnioFabricacion(int anioFabricacion) {
         this.anioFabricacion = anioFabricacion;
     }
+    public String getPatente() {
+        return patente;
+    }
+    public void setPatente(String patente) {
+        this.patente = patente;
+    }
 
     public Vehiculo(String marca, String modelo, String color, int cantRuedas, int anioFabricacion, String patente) {
         this.marca = marca;
