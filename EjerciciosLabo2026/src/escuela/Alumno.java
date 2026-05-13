@@ -9,11 +9,16 @@ import java.util.ArrayList;
 public class Alumno extends Persona {
     private ArrayList<Float> listaNotas;
     private ArrayList<Materia> materias;
+    private int division;
 
     public Alumno(){
         super();
         this.listaNotas = new ArrayList<Float>();
         this.materias = new ArrayList<Materia>();
+    }
+    public Alumno(String nombre, String apellido, int division){
+        super(nombre, apellido);
+        this.division = division;
     }
 
     public ArrayList<Float> getListaNotas() {
@@ -27,6 +32,12 @@ public class Alumno extends Persona {
     }
     public void setMaterias(ArrayList<Materia> materias) {
         this.materias = materias;
+    }
+    public int getDivision() {
+        return division;
+    }
+    public void setDivision(int division) {
+        this.division = division;
     }
 
     public void agregarNota(float nota){
