@@ -6,18 +6,18 @@ import seresVivos.Persona;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class Alumno extends Persona {
+public class Alumno extends PersonaEducativa {
     private ArrayList<Float> listaNotas;
     private ArrayList<Materia> materias;
     private int division;
 
     public Alumno(){
-        super();
+        super(0);
         this.listaNotas = new ArrayList<Float>();
         this.materias = new ArrayList<Materia>();
     }
     public Alumno(String nombre, String apellido, int division){
-        super(nombre, apellido);
+        super(nombre, apellido,0);
         this.division = division;
     }
 
@@ -39,6 +39,7 @@ public class Alumno extends Persona {
     public void setDivision(int division) {
         this.division = division;
     }
+
 
     public void agregarNota(float nota){
         this.listaNotas.add(nota);

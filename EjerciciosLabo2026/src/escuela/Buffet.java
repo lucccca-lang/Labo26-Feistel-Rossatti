@@ -47,13 +47,13 @@ public class Buffet {
         menu.remove(plato);
     }
 
-    public Pedido crearPedido(LocalDate fechaCreacion, Plato plato, Persona persona, LocalTime horaEntrega, boolean entregado) {
+    public Pedido crearPedido(LocalDate fechaCreacion, Plato plato, PersonaEducativa persona, LocalTime horaEntrega, boolean entregado) {
         Pedido pedido = new Pedido(fechaCreacion, plato, persona, horaEntrega, entregado);
         this.pedidos.add(pedido);
         return pedido;
     }
 
-    public void pedPendientes(){
+    public void pedidosPendientes(){
         for (Pedido p: pedidos){
             if (!p.isEntregado()){
                 System.out.println(p.getPlato().getNombre() + " pertenece a " + p.getPersona().getNombre());
@@ -67,6 +67,62 @@ public class Buffet {
                 System.out.println("Plato: " + p.getPlato().getNombre() + "Precio final" + p.chequearDescuento());
             }
         }
+    }
+
+    public void top3(){
+        int cont1=0, cont2=0, cont3=0;
+        Plato top1= null, top2=null, top3=null;
+        for (Plato platos : menu){
+            int cont = 0;
+                for (Pedido pedido : pedidos){
+                    if (pedido.getPlato().equals(platos)){
+                        cont++;
+                    }
+                }
+
+                if (cont>cont1){
+
+                    cont3=cont2;
+                    top3=top2;
+
+                    cont2=cont1;
+                    top2=top1;
+
+                    cont1=cont;
+                    top1=platos;
+                }
+            if (cont>cont2){
+
+                cont3=cont2;
+                top3=top2;
+
+                cont2=cont;
+                top2=platos;
+            }
+            if (cont>cont3){
+
+                cont3=cont;
+                top3=platos;
+            }
+
+        }
+    }
+
+    public void mostrarTop(Plato top1, Plato top2, Plato top3, int cont1, int cont2, int cont3){
+
+        if (top1!= null){
+            System.out.println("1- "+ top1.getNombre()+ " lo pidieron " + cont1 + " veces");
+        }
+        if(top2!=null){
+            System.out.println("2- " + top2.getNombre()+" lo pidieron " + cont2 + " veces");
+        }
+         if(top3!=null){
+             System.out.println("3- " + top3.getNombre()+ " lo pidieron " + cont3 + " veces");
+         }
+    }
+
+    public void entregarPedido(Pedido pedido) {
+        pedido.setEntregado(true);
     }
 
     public static void main(String[] args) {
@@ -100,5 +156,5 @@ public class Buffet {
     }
 }
 
-//no pudimos hacer todo, nos falto el top y la entrega de pedidos, lo pensamos y no pudimos entender que hacer
+//no pudimos hacer todo, nos falto el top, lo pensamos y no pudimos entender que hacer
 //dimos lo mejor de nosotros, <3

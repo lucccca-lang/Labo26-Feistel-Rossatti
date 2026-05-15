@@ -8,7 +8,7 @@ import java.time.LocalTime;
 public class Pedido {
     private LocalDate fechaCreacion;
     private Plato plato;
-    private Persona persona;
+    private PersonaEducativa persona;
     private LocalTime horaEntrega;
     private boolean entregado;
 
@@ -36,14 +36,14 @@ public class Pedido {
     public void setEntregado(boolean entregado) {
         this.entregado = entregado;
     }
-    public Persona getPersona() {
+    public PersonaEducativa getPersona() {
         return persona;
     }
-    public void setPersona(Persona persona) {
+    public void setPersona(PersonaEducativa persona) {
         this.persona = persona;
     }
 
-    public Pedido(LocalDate fechaCreacion, Plato plato, Persona persona, LocalTime horaEntrega, boolean entregado) {
+    public Pedido(LocalDate fechaCreacion, Plato plato, PersonaEducativa persona, LocalTime horaEntrega, boolean entregado) {
         this.fechaCreacion = fechaCreacion;
         this.plato = plato;
         this.persona = persona;
@@ -52,11 +52,7 @@ public class Pedido {
     }
 
     public double chequearDescuento(){
-        double precio = plato.getPrecio();
-
-            if (persona instanceof Profesor) {
-            precio = plato.setPrecio(plato.getPrecio() * 0.5);
-            }
+        double precio = (plato.getPrecio()* getPersona().getPorcDesc())/100;
         return precio;
     }
 }
