@@ -32,4 +32,7 @@ public class Empleado extends Persona {
     public void setNumTelefono(int numTelefono) {
         this.numTelefono = numTelefono;
     }
+
+
+
 }
