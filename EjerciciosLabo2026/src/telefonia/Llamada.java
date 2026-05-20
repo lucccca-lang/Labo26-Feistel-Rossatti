@@ -30,5 +30,7 @@ public class Llamada {
         this.Duracion = duracion;
     }
 
-
+    public int calcularCosto(){
+        return 0;
+    }
 }
