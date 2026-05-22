@@ -26,7 +26,7 @@ public class EmpresaTelefonica {
             }
         }
     }
-    public int costoLlamada() {
+    public int controlLlamada() {
         for (Llamada l : llamadas) {
             System.out.println(l.calcularCosto());
         }
