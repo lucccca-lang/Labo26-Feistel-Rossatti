@@ -30,5 +30,6 @@ public class EmpresaTelefonica {
         for (Llamada l : llamadas) {
             System.out.println(l.calcularCosto());
         }
+        return 0;
     }
 }
