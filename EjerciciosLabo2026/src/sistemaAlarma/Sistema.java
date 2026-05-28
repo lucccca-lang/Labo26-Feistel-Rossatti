@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Sistema {
     private ArrayList<Sensor> sensores;
-
+    
     public Sistema(ArrayList<Sensor> sensores) {
         this.sensores = sensores;
     }
