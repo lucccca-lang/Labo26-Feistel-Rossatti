@@ -38,6 +38,18 @@ public class Componente {
         this.precioVenta = precioVenta;
     }
 
+    public int EsCpu(){
+        return 0;
+    }
+    public int EsDispSalida(){
+        return 0;
+    }
+    public int EsDispEntrada(){
+        return 0;
+    }
+
+
+
     public int ActualizarPrecio(int porcentaje){
         porcentaje pre
 

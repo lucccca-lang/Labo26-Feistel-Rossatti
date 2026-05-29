@@ -10,7 +10,7 @@ public class Libro {
     private Persona autor;
     private String isbn;
     private int cantDePags;
-    private String editorial;
+    private Editorial editorial;
     private Fecha fechaDePublicacion;
 
     public Libro(){
@@ -18,11 +18,11 @@ public class Libro {
         this.autor = new Persona("James Clear", "dsadas", "Washington 1234",LocalDate.of(1999,1,1));
         this.isbn = "1234-321";
         this.cantDePags = 400;
-        this.editorial = "Sudamericana";
+        this.editorial = Editorial.SUDAMERICANA;
         this.fechaDePublicacion= new Fecha();
     }
 
-    public Libro(String titulo, Persona autor, String isbn, int cantDePags, String editorial, Fecha fechaDePublicacion){
+    public Libro(String titulo, Persona autor, String isbn, int cantDePags, Editorial editorial, Fecha fechaDePublicacion){
         this.titulo = titulo;
         this.autor = autor;
         this.isbn = isbn;
@@ -36,7 +36,7 @@ public class Libro {
         this.autor = autor;
         this.isbn = "4321-123";
         this.cantDePags = cantDePags;
-        this.editorial = "Biblos";
+        this.editorial = Editorial.SUR;
         this.fechaDePublicacion = fechaDePublicacion;
     }
 
@@ -51,9 +51,6 @@ public class Libro {
     }
     public int getCantDePags() {
         return cantDePags;
-    }
-    public String getEditorial() {
-        return editorial;
     }
     public Fecha getFechaDePublicacion() {
         return fechaDePublicacion;
@@ -73,7 +70,10 @@ public class Libro {
     public void setIsbn(String isbn) {
         this.isbn = isbn;
     }
-    public void setEditorial(String editorial) {
+    public Editorial getEditorial() {
+        return editorial;
+    }
+    public void setEditorial(Editorial editorial) {
         this.editorial = editorial;
     }
 
@@ -96,6 +96,15 @@ public class Libro {
             System.out.println("El libro " + libro.getTitulo() + " se publico antes");
         }
     }
+
+    public void mostrarEditoriales(){
+        Editorial[] nombres = Editorial.values();
+        for (Editorial edi : nombres){
+            System.out.println(edi);
+        }
+    }
+
+
 
     public static void main(String[] args) {
         Libro libro = new Libro();

@@ -6,4 +6,9 @@ public class DispSalida extends Dispositivo{
         super(nombreFabricante, modelo, stock, precioVenta, cantPuertosValidos);
     }
 
+    @Override
+    public int EsDispSalida() {
+        return 1.
+                0;
+    }
 }

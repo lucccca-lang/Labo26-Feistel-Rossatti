@@ -15,4 +15,8 @@ public class DispEntrada extends Dispositivo{
         this.tipoConector = tipoConector;
     }
 
+    @Override
+    public int EsDispEntrada() {
+        return 1;
+    }
 }

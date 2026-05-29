@@ -8,6 +8,7 @@ public class Persona {
     private LocalDate fechaNac;
     private int edad;
     private String direccion;
+    private int numCelular;
 
     public Persona(String nombre,String apellido, String direccion, LocalDate fechaNac){
         this.nombre = nombre;
@@ -29,6 +30,11 @@ public class Persona {
         this.apellido = apellido;
     }
 
+    public Persona(String nombre, String apellido, int numCelular) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.numCelular = numCelular;
+    }
 
     public String getDireccion() {
         return direccion;
