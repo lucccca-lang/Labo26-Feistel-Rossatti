@@ -5,7 +5,7 @@ import seresVivos.Persona;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class Intro {
+public class  Intro {
 
     public static void main(String[] args) {
         ArrayList<Integer> numeros = new ArrayList<>();

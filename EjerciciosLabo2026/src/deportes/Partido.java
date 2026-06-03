@@ -1,25 +1,21 @@
 package deportes;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+
 
 public class Partido {
-    private Equipo equipo1;
-    private Equipo equipo2;
-    private int fechaPartido;
-    private String horario;
+    private  Equipo equipo1;
+    private  Equipo equipo2;
+    private Turno turno;
 
-    public Partido(Equipo equipo1, Equipo equipo2, int fechaPartido, String horario) {
+
+    public Partido(Equipo equipo1, Equipo equipo2) {
         this.equipo1 = equipo1;
         this.equipo2 = equipo2;
-
-        if(fechaPartido < 0){
-            this.fechaPartido = 0;
-        }
-        else {
-            this.fechaPartido = fechaPartido;
-        }
-        this.horario = horario;
+        this.turno = asignarTurno(equipo1,equipo2);
     }
+
 
     public Equipo getEquipo1() {
         return equipo1;
@@ -37,19 +33,29 @@ public class Partido {
         this.equipo2 = equipo2;
     }
 
-    public int getFechaPartido() {
-        return fechaPartido;
+    public Turno getTurno() {
+        return turno;
     }
 
-    public void setFechaPartido(int fechaPartido) {
-        this.fechaPartido = fechaPartido;
+    public void setTurno(Turno turno) {
+        this.turno = turno;
     }
 
-    public String getHorario() {
-        return horario;
+    public Turno asignarTurno(Equipo equipo1, Equipo equipo2){
+
+
+        for (Turno turno1 : equipo1.getDisponibilidad()){
+            for (Turno turno2 : equipo2.getDisponibilidad()){
+                if (turno1.equals(turno2)){
+                    return turno1;
+                }
+            }
+        }
+
+
+        return null;
+
     }
 
-    public void setHorario(String horario) {
-        this.horario = horario;
-    }
+
 }

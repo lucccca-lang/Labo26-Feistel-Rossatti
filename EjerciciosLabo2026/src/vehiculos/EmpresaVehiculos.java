@@ -65,8 +65,8 @@ public class EmpresaVehiculos {
     }
 
     public static void main(String[] args) {
-        Camion c1 = new Camion("Scania", "1xx", "Rojo", 6, 1990, "ABC123", 1000,500);
-        Coche co1 = new Coche("Ford", "239", "Azul", 4, 2000, "ab000th", 50,true);
+        Camion c1 = new Camion("Scania", "1xx", Color.ROJO, 6, 1990, "ABC123", 1000,500);
+        Coche co1 = new Coche("Ford", "239", Color.NEGRO, 4, 2000, "ab000th", 50,true);
 
     }
 }

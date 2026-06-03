@@ -17,6 +17,12 @@ public class Persona {
         this.apellido = apellido;
     }
 
+    public Persona(String nombre, String apellido, LocalDate fechaNac) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.fechaNac = fechaNac;
+    }
+
     public Persona(){
         nombre = "Martin";
         apellido = "Gutierrez";

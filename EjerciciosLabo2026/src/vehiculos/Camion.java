@@ -17,7 +17,7 @@ public class Camion extends Vehiculo{
         this.capActual = capActual;
     }
 
-    public Camion(String marca, String modelo, String color, int cantRuedas, int anioFabricacion, String patente, int capCarga, int capActual){
+    public Camion(String marca, String modelo, Color color, int cantRuedas, int anioFabricacion, String patente, int capCarga, int capActual){
         super(marca, modelo, color, cantRuedas, anioFabricacion, patente);
         this.capCarga = capCarga;
         this.capActual = capActual;
