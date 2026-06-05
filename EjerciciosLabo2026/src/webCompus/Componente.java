@@ -3,8 +3,8 @@ package webCompus;
 public class Componente {
     private String nombreFabricante;
     private String modelo;
-    private int precioVenta;
-    private int stock;
+    private float precioVenta;
+    private float stock;
 
     public String getNombreFabricante() {
         return nombreFabricante;
@@ -18,10 +18,10 @@ public class Componente {
     public void setModelo(String modelo) {
         this.modelo = modelo;
     }
-    public int getPrecioVenta() {
+    public float getPrecioVenta() {
         return precioVenta;
     }
-    public void setPrecioVenta(int precioVenta) {
+    public void setPrecioVenta(float precioVenta) {
         this.precioVenta = precioVenta;
     }
     public int getStock() {
@@ -31,7 +31,7 @@ public class Componente {
         this.stock = stock;
     }
 
-    public Componente(String nombreFabricante, String modelo, int stock, int precioVenta) {
+    public Componente(String nombreFabricante, String modelo, int stock, float precioVenta) {
         this.nombreFabricante = nombreFabricante;
         this.modelo = modelo;
         this.stock = stock;
@@ -49,10 +49,4 @@ public class Componente {
     }
 
 
-
-    public int ActualizarPrecio(int porcentaje){
-        porcentaje pre
-
-        return
-    }
 }

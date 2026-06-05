@@ -5,15 +5,16 @@ import java.time.Year;
 import java.util.ArrayList;
 
 public class Materia {
-    private String nombre;
+    private Materias nombre;
     private ArrayList<String> listaContenidos;
     private ArrayList<Alumno> alumnos;
 
-    public String getNombre() {
+
+    public Materias getNombre() {
         return nombre;
     }
 
-    public void setNombre(String nombre) {
+    public void setNombre(Materias nombre) {
         this.nombre = nombre;
     }
 

@@ -4,6 +4,10 @@ public class MetodoPago {
 
 
     public float recargo(){
-        int cantRecargo = 0;
+        return 0;
+    }
+
+    public String metodo(){
+        return "";
     }
 }

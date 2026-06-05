@@ -8,7 +8,6 @@ public class DispSalida extends Dispositivo{
 
     @Override
     public int EsDispSalida() {
-        return 1.
-                0;
+        return 1;
     }
 }

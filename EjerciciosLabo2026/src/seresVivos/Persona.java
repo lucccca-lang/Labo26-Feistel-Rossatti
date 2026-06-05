@@ -72,7 +72,12 @@ public class Persona {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-
+    public int getNumCelular() {
+        return numCelular;
+    }
+    public void setNumCelular(int numCelular) {
+        this.numCelular = numCelular;
+    }
 
     public void datosPersona(){
 
