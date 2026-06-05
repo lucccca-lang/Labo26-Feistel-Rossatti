@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Computadora {
     private ArrayList<Componente> componentes;
-    private int precioTotal;
+    private float precioTotal;
 
     public ArrayList<Componente> getComponentes() {
         return componentes;
@@ -14,11 +14,11 @@ public class Computadora {
         this.componentes = componentes;
     }
 
-    public int getPrecioTotal() {
+    public float getPrecioTotal() {
         return precioTotal;
     }
 
-    public void setPrecioTotal(int precioTotal) {
+    public void setPrecioTotal(float precioTotal) {
         this.precioTotal = precioTotal;
     }
 
@@ -48,6 +48,11 @@ public class Computadora {
 
         return total;
 
+    }
+
+    public void agregarComponente(Componente componente){
+        componentes.add(componente);
+        this.precioTotal = calcularPrecio();
     }
 
     public String detalleComponentes(){

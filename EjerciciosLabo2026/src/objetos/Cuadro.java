@@ -4,13 +4,13 @@ public class Cuadro {
     private String titulo;
     private String pintor;
     private int anioCreacion;
-    private int estado;
+    private EstadoCuadro estado;
 
     public Cuadro(){
         this.titulo = "Mona Lisa";
         this.pintor = "Da Vinci";
         this.anioCreacion = 2010;
-        this.estado = 6;
+        this.estado = EstadoCuadro.SEIS;
     }
 
     public String getTitulo() {
@@ -31,10 +31,10 @@ public class Cuadro {
     public void setAnioCreacion(int anioCreacion) {
         this.anioCreacion = anioCreacion;
     }
-    public int getEstado() {
+    public EstadoCuadro getEstado() {
         return estado;
     }
-    public void setEstado(int estado) {
+    public void setEstado(EstadoCuadro estado) {
         this.estado = estado;
     }
 }

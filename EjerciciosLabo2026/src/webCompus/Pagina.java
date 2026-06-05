@@ -113,12 +113,12 @@ public class Pagina {
     }
 
 
-    public void componenteMasVendido(){
+    /*public void componenteMasVendido(){
         if (!compras.isEmpty()){
             Componente top1 = calcularMasVendido();
             System.out.println("El componente mas vendido es: " + top1.getModelo());
         }
-    }
+    }*/
 
 
     public void mostrarDetalledeCompra(Compra compra){
@@ -128,16 +128,16 @@ public class Pagina {
     public static void main(String[] args) {
         Pagina sistema = new Pagina();
 
-        Persona cliente1 = new Persona("Ana", "Lopez", 1111-1111);
-        Persona cliente2 = new Persona("Bruno", "Diaz", 2222-2222);
-        Persona cliente3 = new Persona("Carla", "Mendez", 3333-3333);
+        Cliente cliente1 = new Cliente("Ana", "Lopez", 1111-1111);
+        Cliente cliente2 = new Cliente("Bruno", "Diaz", 2222-2222);
+        Cliente cliente3 = new Cliente("Carla", "Mendez", 3333-3333);
 
         Cpu cpuAmd = new Cpu("AMD", "Ryzen 7 7800X", 250000F, 3);
         Cpu cpuIntel = new Cpu("Intel", "i7 13700OL", 270000F, 2);
         Teclado tecladoLogi = new Teclado("Redragon", "Kumara k552 autumn", 15000F, 4, 1,"USB");
         Mouse mouseLogi = new Mouse("Razer", "Viper Mini", 120000F, 4, 1,"USB");
         Pantalla monitorSamsung = new Pantalla("Zowie", "T350", 180000F, 2, 2);
-        Impresora hpLaser = new Impresora("HP", "LaserJet", 210000F, 1, 1, "Laser");
+        Impresora hpLaser = new Impresora("HP", "LaserJet", 210000F, 1, 1, MetodoImpresion.LASER);
 
         sistema.getComponentes().add(cpuAmd);
         sistema.getComponentes().add(cpuIntel);
@@ -148,20 +148,20 @@ public class Pagina {
 
 
         Computadora pc1 = new Computadora();
-        pc1.aniadirComponente(cpuAmd);
-        pc1.aniadirComponente(tecladoLogi);
-        pc1.aniadirComponente(monitorSamsung);
+        pc1.agregarComponente(cpuAmd);
+        pc1.agregarComponente(tecladoLogi);
+        pc1.agregarComponente(monitorSamsung);
 
 
 
         Computadora pc2 = new Computadora();
-        pc2.aniadirComponente(cpuIntel);
-        pc2.aniadirComponente(mouseLogi);
-        pc2.aniadirComponente(hpLaser);
+        pc2.agregarComponente(cpuIntel);
+        pc2.agregarComponente(mouseLogi);
+        pc2.agregarComponente(hpLaser);
 
 
         MetodoPago efectivo = new Efectivo();
-        MetodoPago tarjeta = new Cred_o_Deb(12345678, "Galicia", Tarjeta.CREDITO);
+        MetodoPago tarjeta = new Tarjeta(12345678, "Galicia", CredDeb.CREDITO);
 
         System.out.println("Precio total PC1: " + pc1.calcularPrecio());
         System.out.println("Precio total PC2: " + pc2.calcularPrecio());
@@ -175,7 +175,7 @@ public class Pagina {
         System.out.println("Dispositivos de entrada y salida de la PC1: ");
         sistema.cantEntradaySalida(pc1);
 
-        sistema.componenteMasVendido();
+        /*sistema.componenteMasVendido();*/
 
 
     }

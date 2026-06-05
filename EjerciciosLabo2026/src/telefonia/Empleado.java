@@ -6,11 +6,11 @@ public class Empleado extends Persona {
     private int dni;
     private String pais;
     private int numTelefono;
-    private String provincia;
+    private Provincia provincia;
     private int codPais;
     private int franjaHoraria;
 
-    public Empleado(String nombre, String apellido, int dni, String pais, int numTelefono, String provincia, int codPais, int franjaHoraria){
+    public Empleado(String nombre, String apellido, int dni, String pais, int numTelefono, Provincia provincia, int codPais, int franjaHoraria){
         super(nombre, apellido);
         this.dni = dni;
         this.pais = pais;
@@ -38,11 +38,11 @@ public class Empleado extends Persona {
     public void setNumTelefono(int numTelefono) {
         this.numTelefono = numTelefono;
     }
-    public String getProvincia() {
+    public Provincia getProvincia() {
         return provincia;
     }
-    public void setProvincia(String provincia) {
-        this.provincia = provincia;
+    public void setProvincia(Provincia provincia){
+        this.provincia = this.provincia;
     }
     public int getCodPais() {
         return codPais;

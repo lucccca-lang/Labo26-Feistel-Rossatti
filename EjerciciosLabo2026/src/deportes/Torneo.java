@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class Torneo {
     private ArrayList<Partido> partidos;
     private ArrayList<Equipo> equipos;
-    int dias;
+    private int dias;
 
     public Torneo(ArrayList<Equipo> equipos) {
         this.equipos = equipos;

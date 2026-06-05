@@ -19,8 +19,8 @@ public class Local extends Llamada{
 
     public Local(Empleado empOrigen, Empleado empDestino, int duracion) {
         super(empOrigen, empDestino, duracion);
-        this.provDestino = empDestino.getProvincia();
-        this.provOrigen = empOrigen.getProvincia();
+        this.provDestino = empDestino.getProvincia().name();
+        this.provOrigen = empOrigen.getProvincia().name();
     }
 
     public int calcularCosto(){

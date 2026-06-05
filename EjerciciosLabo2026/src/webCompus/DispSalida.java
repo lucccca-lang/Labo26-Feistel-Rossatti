@@ -2,8 +2,8 @@ package webCompus;
 
 public class DispSalida extends Dispositivo{
 
-    public DispSalida(String nombreFabricante, String modelo, int stock, int precioVenta, int cantPuertosValidos) {
-        super(nombreFabricante, modelo, stock, precioVenta, cantPuertosValidos);
+    public DispSalida(String nombreFabricante, String modelo, int stock, float precioVenta, int cantPuertosValidos) {
+        super(nombreFabricante, modelo, precioVenta, stock, cantPuertosValidos);
     }
 
     @Override

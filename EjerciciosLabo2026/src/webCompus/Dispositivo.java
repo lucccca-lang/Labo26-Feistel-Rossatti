@@ -10,8 +10,8 @@ public class Dispositivo extends Componente{
         this.cantPuertosValidos = cantPuertosValidos;
     }
 
-    public Dispositivo(String nombreFabricante, String modelo, int stock, int precioVenta, int cantPuertosValidos) {
-        super(nombreFabricante, modelo, stock, precioVenta);
+    public Dispositivo(String nombreFabricante, String modelo, float precioVenta, int stock, int cantPuertosValidos) {
+        super(nombreFabricante, modelo,  precioVenta, stock);
         this.cantPuertosValidos = cantPuertosValidos;
     }
 

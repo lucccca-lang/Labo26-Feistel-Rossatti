@@ -5,6 +5,12 @@ public class Tarjeta extends MetodoPago{
     private String banco;
     private CredDeb cred_o_debito;
 
+    public Tarjeta(int numero, String banco, CredDeb cred_o_debito) {
+        this.numero = numero;
+        this.banco = banco;
+        this.cred_o_debito = cred_o_debito;
+    }
+
     public int getNumero() {
         return numero;
     }

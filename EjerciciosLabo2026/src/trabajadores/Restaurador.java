@@ -1,6 +1,7 @@
 package trabajadores;
 
 import objetos.Cuadro;
+import objetos.EstadoCuadro;
 import seresVivos.Persona;
 
 import java.time.LocalDate;
@@ -30,19 +31,21 @@ public class Restaurador extends Persona {
     }
 
     public void restaurar(Cuadro cuadro){
-        int estadoViejo = cuadro.getEstado();
+        EstadoCuadro estadoViejo = cuadro.getEstado();
 
-        if(cuadro.getAnioCreacion() < 2001 && cuadro.getEstado() < 9){
-            cuadro.setEstado(cuadro.getEstado()+2);
+        if(cuadro.getAnioCreacion() < 2001 && cuadro.getEstado().ordinal() < 9){
+            int nueva = cuadro.getEstado().ordinal()+2;
+            cuadro.setEstado(EstadoCuadro.values()[nueva]);
         }
-        else if(cuadro.getAnioCreacion() > 2001 && cuadro.getEstado() < 8){
-            cuadro.setEstado(cuadro.getEstado()+3);
+        else if(cuadro.getAnioCreacion() > 2001 && cuadro.getEstado().ordinal() < 8){
+            int nueva = cuadro.getEstado().ordinal()+3;
+            cuadro.setEstado(EstadoCuadro.values()[nueva]);
         }
-        else if (cuadro.getEstado() == 10) {
+        else if (cuadro.getEstado().ordinal() == 10) {
             System.out.println("El cuadro esta en perfecto estado");
         }
         else{
-            cuadro.setEstado(10);
+            cuadro.setEstado(EstadoCuadro.values()[10]);
         }
         System.out.println("El cuadro estaba " + estadoViejo + " puntos");
         System.out.println("El cuadro quedo " + cuadro.getEstado() + " puntos");

@@ -10,8 +10,8 @@ public class DispEntrada extends Dispositivo{
         this.tipoConector = tipoConector;
     }
 
-    public DispEntrada(String nombreFabricante, String modelo, int stock, int precioVenta, int cantPuertosValidos, String tipoConector) {
-        super(nombreFabricante, modelo, stock, precioVenta, cantPuertosValidos);
+    public DispEntrada(String nombreFabricante, String modelo, float precioVenta, int stock, int cantPuertosValidos, String tipoConector) {
+        super(nombreFabricante, modelo, precioVenta, stock, cantPuertosValidos);
         this.tipoConector = tipoConector;
     }
 

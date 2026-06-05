@@ -83,7 +83,7 @@ public class Libro {
         autor.datosPersona();
         System.out.println("ISBN: " + isbn);
         System.out.println("Cant de Paginas: " + cantDePags);
-        System.out.println("Editorial: " + editorial);
+        System.out.println("Editorial: " + editorial.name());
         System.out.print("fecha.Fecha de Publicacion: ");
         fechaDePublicacion.corta();
     }

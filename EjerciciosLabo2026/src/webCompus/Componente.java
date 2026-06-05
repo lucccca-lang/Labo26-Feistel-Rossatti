@@ -4,7 +4,7 @@ public class Componente {
     private String nombreFabricante;
     private String modelo;
     private float precioVenta;
-    private float stock;
+    private int stock;
 
     public String getNombreFabricante() {
         return nombreFabricante;
@@ -31,7 +31,7 @@ public class Componente {
         this.stock = stock;
     }
 
-    public Componente(String nombreFabricante, String modelo, int stock, float precioVenta) {
+    public Componente(String nombreFabricante, String modelo, float precioVenta, int stock) {
         this.nombreFabricante = nombreFabricante;
         this.modelo = modelo;
         this.stock = stock;

@@ -3,7 +3,7 @@ package webCompus;
 public class Cpu extends Hardware{
 
 
-    public Cpu(String nombreFabricante, String modelo, int precioVenta, int stock) {
+    public Cpu(String nombreFabricante, String modelo, float precioVenta, int stock) {
         super(nombreFabricante, modelo, precioVenta, stock);
     }
 
