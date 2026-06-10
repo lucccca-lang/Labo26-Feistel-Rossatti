@@ -6,6 +6,13 @@ public class Cuadro {
     private int anioCreacion;
     private EstadoCuadro estado;
 
+    public Cuadro(String titulo, String pintor, int anioCreacion, EstadoCuadro estado) {
+        this.titulo = titulo;
+        this.pintor = pintor;
+        this.anioCreacion = anioCreacion;
+        this.estado = estado;
+    }
+
     public Cuadro(){
         this.titulo = "Mona Lisa";
         this.pintor = "Da Vinci";

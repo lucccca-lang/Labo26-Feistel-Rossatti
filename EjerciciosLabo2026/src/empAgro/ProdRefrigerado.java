@@ -17,5 +17,4 @@ public class ProdRefrigerado extends Producto{
         this.tempMantenimiento = tempMantenimiento;
     }
 
-
 }

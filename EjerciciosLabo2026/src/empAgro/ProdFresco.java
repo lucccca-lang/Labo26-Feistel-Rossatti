@@ -8,7 +8,8 @@ public class ProdFresco extends Producto{
         super(fechaVencimiento, numLote, nombre, codId, paisOrigen, fechaEnavsado);
     }
 
-    public void agregarProdA(){
-
+    @Override
+    public boolean prodMasRecienteEnv(Producto prod) {
+        return this.getFechaEnvasado().isAfter(prod.getFechaEnvasado());
     }
 }

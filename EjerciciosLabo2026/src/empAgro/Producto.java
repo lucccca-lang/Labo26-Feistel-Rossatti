@@ -8,7 +8,7 @@ public class Producto {
     private String nombre;
     private int codId;
     private PaisOrigen paisOrigen;
-    private LocalDate fechaEnavsado;
+    private LocalDate fechaEnvasado;
     private Empresa empresa;
 
     public Producto(LocalDate fechaVencimiento, int numLote, String nombre, int codId, PaisOrigen paisOrigen, LocalDate fechaEnavsado) {
@@ -17,7 +17,7 @@ public class Producto {
         this.nombre = nombre;
         this.codId = codId;
         this.paisOrigen = paisOrigen;
-        this.fechaEnavsado = fechaEnavsado;
+        this.fechaEnvasado = fechaEnvasado;
     }
 
     public LocalDate getFechaVencimiento() {
@@ -50,11 +50,16 @@ public class Producto {
     public void setPaisOrigen(PaisOrigen paisOrigen) {
         this.paisOrigen = paisOrigen;
     }
-    public LocalDate getFechaEnavsado() {
-        return fechaEnavsado;
+    public LocalDate getFechaEnvasado() {
+        return fechaEnvasado;
     }
-    public void setFechaEnavsado(LocalDate fechaEnavsado) {
-        this.fechaEnavsado = fechaEnavsado;
+    public void setFechaEnvasado(LocalDate fechaEnvasado) {
+        this.fechaEnvasado = fechaEnvasado;
+    }
+
+
+    public boolean prodMasRecienteEnv(Producto prod){
+        return false;
     }
 
 

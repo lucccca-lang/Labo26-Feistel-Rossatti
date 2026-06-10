@@ -1,22 +1,12 @@
 package empAgro;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class EmpresaAgro {
     private ArrayList<Producto> listaProductos;
 
     public void agregarProducto(Producto producto) {
-
-       /* if (producto instanceof ProdFresco) {
-            prodFrescos.add((ProdFresco) producto);
-        }
-        else if (producto instanceof ProdRefrigerado) {
-            prodRefrigerados.add((ProdRefrigerado) producto);
-        }
-        else{
-            System.out.println("Producto no pertenece a estas listas");
-        }*/
-
         if(!listaProductos.contains(producto)){
             listaProductos.add(producto);
         }
@@ -31,5 +21,30 @@ public class EmpresaAgro {
         return info;
     }
 
-    public int prodFrescoEnEmpMasReciente()
+    public int prodFrescoEnEmpMasReciente(){
+        Producto p1 = listaProductos.get(0);
+        int fechanum = 0;
+
+        for(Producto p : listaProductos) {
+                if (p.prodMasRecienteEnv(p1)) {
+                    fechanum = p.getNumLote();
+                    p1 = p;
+                }
+        }
+        return fechanum;
+    }
+
+    public void cantProducto() {
+        for (PaisOrigen pais : PaisOrigen.values()) {
+            int contadorPaisOrigen = 0;
+            for (Producto prod : listaProductos) {
+                if (prod.getPaisOrigen().equals(pais)) {
+                    contadorPaisOrigen++;
+                }
+            }
+            System.out.println(pais + "-" + contadorPaisOrigen);
+        }
+    }
+
+
 }
