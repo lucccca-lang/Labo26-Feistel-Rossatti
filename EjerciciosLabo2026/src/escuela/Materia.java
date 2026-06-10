@@ -13,23 +13,18 @@ public class Materia {
     public Materias getNombre() {
         return nombre;
     }
-
     public void setNombre(Materias nombre) {
         this.nombre = nombre;
     }
-
     public ArrayList<String> getListaContenidos() {
         return listaContenidos;
     }
-
     public void setListaContenidos(ArrayList<String> listaContenidos) {
         this.listaContenidos = listaContenidos;
     }
-
     public ArrayList<Alumno> getAlumnos() {
         return alumnos;
     }
-
     public void setAlumnos(ArrayList<Alumno> alumnos) {
         this.alumnos = alumnos;
     }

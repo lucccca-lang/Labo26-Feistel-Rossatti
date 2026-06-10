@@ -20,31 +20,24 @@ public class Equipo {
     public ArrayList<Turno> getDisponibilidad() {
         return disponibilidad;
     }
-
     public void setDisponibilidad(ArrayList<Turno> disponibilidad) {
         this.disponibilidad = disponibilidad;
     }
-
     public Jugador getCapitan() {
         return capitan;
     }
-
     public void setCapitan(Jugador capitan) {
         this.capitan = capitan;
     }
-
     public ArrayList<Jugador> getLista() {
         return lista;
     }
-
     public void setLista(ArrayList<Jugador> lista) {
         this.lista = lista;
     }
-
     public String getNombre() {
         return nombre;
     }
-
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }

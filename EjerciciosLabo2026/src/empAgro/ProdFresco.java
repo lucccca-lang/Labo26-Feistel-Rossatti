@@ -1,0 +1,14 @@
+package empAgro;
+
+import java.time.LocalDate;
+
+public class ProdFresco extends Producto{
+
+    public ProdFresco(LocalDate fechaVencimiento, int numLote, String nombre, int codId, PaisOrigen paisOrigen, LocalDate fechaEnavsado) {
+        super(fechaVencimiento, numLote, nombre, codId, paisOrigen, fechaEnavsado);
+    }
+
+    public void agregarProdA(){
+
+    }
+}

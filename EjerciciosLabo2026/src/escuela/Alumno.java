@@ -15,7 +15,7 @@ public class Alumno extends PersonaEducativa {
         super(0);
         this.listaNotas = new ArrayList<Float>();
         this.materias = new ArrayList<Materia>();
-    }
+    }   
     public Alumno(String nombre, String apellido, int division){
         super(nombre, apellido,0);
         this.division = division;
@@ -64,8 +64,6 @@ public class Alumno extends PersonaEducativa {
         for (float nota : listaNotas) {
             if (mNota < nota) {
                 mNota = nota;
-
-
             }
         }
         return mNota;
