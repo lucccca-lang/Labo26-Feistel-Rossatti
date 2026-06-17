@@ -1,4 +1,6 @@
-package seresVivos;
+package deportes;
+import seresVivos.Persona;
+
 import java.time.LocalDate;
 
 public class Jugador extends Persona {

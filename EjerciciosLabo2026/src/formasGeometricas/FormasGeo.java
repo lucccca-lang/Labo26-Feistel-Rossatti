@@ -1,11 +1,7 @@
 package formasGeometricas;
 
-public class FormasGeo {
+public abstract class FormasGeo {
 
-    public double calcularArea(){
-        return 0;
-    }
-    public double calcularPerimetro(){
-        return 0;
-    }
+    public abstract double calcularArea();
+    public abstract double calcularPerimetro();
 }

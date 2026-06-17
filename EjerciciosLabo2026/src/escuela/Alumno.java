@@ -101,11 +101,4 @@ public class Alumno extends PersonaEducativa {
 
 
     }
-
-    /*public static void main(String[] args) {
-        boolean dispo = true;
-        if(!dispo()){                lo mismo que dispo==true
-
-        }
-    }*/
 }

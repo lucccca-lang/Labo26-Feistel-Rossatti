@@ -2,7 +2,7 @@ package seresVivos;
 
 import java.time.LocalDate;
 
-public class Persona {
+public abstract class Persona {
     private String nombre;
     private String apellido;
     private LocalDate fechaNac;
@@ -79,15 +79,9 @@ public class Persona {
         this.numCelular = numCelular;
     }
 
-    public void datosPersona(){
+    public  void datosPersona(){
 
         System.out.println("El nombre es " + getNombre() + ", su edad es " + getEdad() + " y vive en " + getDireccion());
     }
 
-
-
-    public static void main(String[] args) {
-        Persona p1 = new Persona();
-        p1.datosPersona();
-    }
 }

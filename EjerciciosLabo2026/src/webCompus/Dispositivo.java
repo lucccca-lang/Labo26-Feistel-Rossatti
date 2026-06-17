@@ -1,6 +1,6 @@
 package webCompus;
 
-public class Dispositivo extends Componente{
+public abstract class Dispositivo extends Componente{
     private int cantPuertosValidos;
 
     public int getCantPuertosValidos() {
@@ -16,4 +16,18 @@ public class Dispositivo extends Componente{
     }
 
 
+    @Override
+    public int EsCpu() {
+        return 0;
+    }
+
+    @Override
+    public int EsDispSalida() {
+        return 0;
+    }
+
+    @Override
+    public int EsDispEntrada() {
+        return 0;
+    }
 }

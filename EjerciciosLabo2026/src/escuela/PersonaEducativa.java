@@ -4,7 +4,7 @@ import seresVivos.Persona;
 
 import java.time.LocalDate;
 
-public class PersonaEducativa extends Persona {
+public abstract class PersonaEducativa extends Persona {
     private int porcDesc;
 
     public PersonaEducativa(String nombre, String apellido, String direccion, LocalDate fechaNac, int porcDesc) {

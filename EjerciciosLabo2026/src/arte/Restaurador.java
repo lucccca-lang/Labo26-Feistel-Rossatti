@@ -1,10 +1,6 @@
-package trabajadores;
+package arte;
 
-import objetos.Cuadro;
-import objetos.EstadoCuadro;
 import seresVivos.Persona;
-
-import java.time.LocalDate;
 
 public class Restaurador extends Persona {
     private int dni;

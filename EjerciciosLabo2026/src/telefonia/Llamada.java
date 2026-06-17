@@ -1,6 +1,6 @@
 package telefonia;
 
-public class Llamada {
+public abstract class Llamada {
     private Empleado empOrigen;
     private Empleado empDestino;
     private int Duracion;
@@ -30,7 +30,5 @@ public class Llamada {
         this.Duracion = duracion;
     }
 
-    public int calcularCosto(){
-        return 0;
-    }
+    public abstract int calcularCosto();
 }

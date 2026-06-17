@@ -1,13 +1,9 @@
 package webCompus;
 
-public class MetodoPago {
+public abstract class MetodoPago {
 
 
-    public float recargo(){
-        return 0;
-    }
+    public abstract float recargo();
 
-    public String metodo(){
-        return "";
-    }
+    public abstract String metodo();
 }

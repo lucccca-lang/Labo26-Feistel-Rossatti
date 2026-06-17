@@ -1,6 +1,6 @@
 package webCompus;
 
-public class Componente {
+public abstract class Componente {
     private String nombreFabricante;
     private String modelo;
     private float precioVenta;
@@ -38,15 +38,9 @@ public class Componente {
         this.precioVenta = precioVenta;
     }
 
-    public int EsCpu(){
-        return 0;
-    }
-    public int EsDispSalida(){
-        return 0;
-    }
-    public int EsDispEntrada(){
-        return 0;
-    }
+    public abstract int EsCpu();
+    public abstract int EsDispSalida();
+    public abstract int EsDispEntrada();
 
 
 }

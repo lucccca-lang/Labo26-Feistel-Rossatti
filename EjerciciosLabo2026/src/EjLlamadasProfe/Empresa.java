@@ -122,7 +122,8 @@ public class Empresa {
                     minutosRanking.set(j,aux);
                     empleadosRanking.set(j,auxEmp); //6, 7, 4, 11, 10, 14, 2, 1
                 }
-            }}
+            }
+        }
 
     }
         //TODO: Teniendo en cuenta los dos arreglos,

@@ -1,4 +1,4 @@
-package objetos;
+package arte;
 
 public class Cuadro {
     private String titulo;

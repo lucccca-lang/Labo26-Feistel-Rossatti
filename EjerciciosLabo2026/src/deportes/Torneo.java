@@ -1,7 +1,5 @@
 package deportes;
 
-import seresVivos.Jugador;
-
 import java.time.LocalDate;
 import java.util.ArrayList;
 

@@ -17,4 +17,8 @@ public class ProdRefrigerado extends Producto{
         this.tempMantenimiento = tempMantenimiento;
     }
 
+    @Override
+    public boolean prodMasRecienteEnv(Producto prod) {
+        return false;
+    }
 }

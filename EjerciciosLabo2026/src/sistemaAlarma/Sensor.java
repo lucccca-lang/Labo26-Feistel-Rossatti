@@ -2,7 +2,7 @@ package sistemaAlarma;
 
 import java.time.LocalDate;
 
-public class Sensor {
+public abstract class Sensor {
     private boolean estado;
     private int valorReal;
     private int valorUmbral;
@@ -40,6 +40,5 @@ public class Sensor {
         this.fechaAdquirido = fechaAdquirido;
     }
 
-    public void dispararAlarma(){
-    }
+    public abstract void dispararAlarma();
 }

@@ -2,7 +2,7 @@ package empAgro;
 
 import java.time.LocalDate;
 
-public class Producto {
+public abstract class Producto {
     private LocalDate fechaVencimiento;
     private int numLote ;
     private String nombre;
@@ -58,9 +58,8 @@ public class Producto {
     }
 
 
-    public boolean prodMasRecienteEnv(Producto prod){
-        return false;
-    }
+    public abstract boolean prodMasRecienteEnv(Producto prod);
+
 
 
 }
