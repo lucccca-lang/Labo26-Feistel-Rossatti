@@ -51,9 +51,9 @@ public class Cd {
     public static void main(String[] args) {
         Cd cd1 = new Cd();
         Cancion can1 = new Cancion();
-        Cancion can2 = new Cancion("Hola", new Persona());
+       // Cancion can2 = new Cancion("Hola", new Persona());
         cd1.agrega(can1);
-        cd1.agrega(can2);
+        //cd1.agrega(can2);
 
         cd1.listarCanciones();
     }

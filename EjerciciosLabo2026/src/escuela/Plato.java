@@ -1,8 +1,13 @@
 package escuela;
 
+import appRecetas.Dificultad;
+
+import java.util.ArrayList;
+
 public class Plato {
     private String nombre;
     private double precio;
+
 
     public double getPrecio() {
         return precio;
@@ -22,4 +27,6 @@ public class Plato {
         this.nombre = nombre;
         this.precio = precio;
     }
+
+
 }

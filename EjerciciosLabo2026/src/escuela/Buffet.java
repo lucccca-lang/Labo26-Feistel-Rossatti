@@ -1,7 +1,5 @@
 package escuela;
 
-import seresVivos.Persona;
-
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;

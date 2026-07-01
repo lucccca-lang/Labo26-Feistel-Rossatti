@@ -38,9 +38,9 @@ public class  Intro {
 
 
 
-        personas.add(new Persona("Fernando", "dasdasd", "olazabal 7590", LocalDate.of(1999,1,1)));
-        personas.add(new Persona("Luis", "sdasdas", "ibera 5783", LocalDate.of(1999,1,1)));
-        personas.add(new Persona("Julua", "dasdasd", "condarco 5676", LocalDate.of(1999,1,1)));
+     //   personas.add(new Persona("Fernando", "dasdasd", "olazabal 7590", LocalDate.of(1999,1,1)));
+     //   personas.add(new Persona("Luis", "sdasdas", "ibera 5783", LocalDate.of(1999,1,1)));
+     //   personas.add(new Persona("Julua", "dasdasd", "condarco 5676", LocalDate.of(1999,1,1)));
 
         for(Persona p : personas){
             if(p.getEdad() > 30){
