@@ -10,6 +10,11 @@ public class Entrada extends Plato{
         this.esFria = isEsFria();
     }
 
+    @Override
+    public boolean esDeTipo(Tipo tipo) {
+        return tipo == Tipo.ENTRADA;
+    }
+
     public boolean isEsFria() {
         return esFria;
     }

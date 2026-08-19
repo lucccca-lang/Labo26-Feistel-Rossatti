@@ -27,6 +27,11 @@ public class Postre extends Plato {
 
 
     @Override
+    public boolean esDeTipo(Tipo tipo) {
+        return tipo == Tipo.POSTRE;
+    }
+
+    @Override
     public void mostrarDetalles() {
         for(String p : getListaPasos()){
             System.out.println(p + "Recorda: Limpiar la cocina y poner el horno al minimo");

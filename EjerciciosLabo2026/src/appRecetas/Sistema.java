@@ -21,15 +21,25 @@ public class Sistema {
             }
         }
     }
-    public void filtrarReceta(String txt){
-
-
+    public ArrayList<Plato> getPlatoTipo(Tipo tipo){
+        ArrayList<Plato> platosFiltrados = new ArrayList<>();
+        for(Plato plato: this.listaPlato){
+            if(plato.esDeTipo(tipo)){
+                platosFiltrados.add(plato);
+            }
+        }
+        return  platosFiltrados;
     }
     public int cantRecetas(){
         return listaPlato.size();
     }
-    public Plato mayorReceta(){
+    public Plato platoMasPasos(){
+        Plato platoMasPaso = this.listaPlato.getFirst();
 
+        for(Plato plato: this.listaPlato){
+            platoMasPaso = plato.platoMasPasos(platoMasPaso);
+        }
+        return  platoMasPaso;
     }
 
 }

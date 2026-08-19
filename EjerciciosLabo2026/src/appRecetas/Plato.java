@@ -32,6 +32,8 @@ public abstract class Plato {
         this.listaPasos = listaPasos;
     }
 
+    public abstract boolean esDeTipo(Tipo tipo);
+
     public abstract void mostrarDetalles();
 
     @Override
@@ -41,5 +43,16 @@ public abstract class Plato {
                 ", dificultad=" + dificultad +
                 ", listaPasos=" + listaPasos +
                 '}';
+    }
+
+    public int numPasos(){
+        return  this.listaPasos.size();
+    }
+
+    public  Plato platoMasPasos(Plato plato){
+        if(this.numPasos() > plato.numPasos()){
+            return this;
+        }
+        return plato;
     }
 }

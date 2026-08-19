@@ -27,6 +27,11 @@ public class PlatoPrincipal extends Plato {
 
 
     @Override
+    public boolean esDeTipo(Tipo tipo) {
+        return tipo == Tipo.PLATO_PRINCIPAL;
+    }
+
+    @Override
     public void mostrarDetalles() {
         System.out.println("Esta receta tarda en cocinarse " + this.tiempoCoccion + " y los pasos son : " + getListaPasos());
     }
