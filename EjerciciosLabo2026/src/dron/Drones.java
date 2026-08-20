@@ -65,7 +65,7 @@ public abstract class Drones {
     public abstract boolean comunicarAlSistema();
 
 
-    public void calcularDistancia(double latitudDestino, double longitudDestino) {
+    public double calcularDistancia(double latitudDestino, double longitudDestino) {
         // Convertir a radianes
         double lat1Rad = Math.toRadians(34.573195);
         double lon1Rad = Math.toRadians(-58.504111);
