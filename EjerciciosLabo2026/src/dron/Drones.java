@@ -61,7 +61,8 @@ public abstract class Drones {
         return this.nivelCarga;
     }
 
-    public abstract void ejecutarMision();
+    public abstract void ejecutarMision(double latitudDestino, double longitudDestino);
+
     public abstract boolean comunicarAlSistema();
 
 
