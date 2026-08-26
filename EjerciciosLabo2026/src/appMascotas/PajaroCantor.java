@@ -15,5 +15,8 @@ public class PajaroCantor extends Pajaro{
         this.canto = canto;
     }
 
-
+    @Override
+    public TipoMascota tipoMascota() {
+        return TipoMascota.PAJAROCANTOR;
+    }
 }

@@ -1,5 +1,5 @@
 package appMascotas;
 
 public enum TipoMascota {
-    PERRO, PAJAROCANTOR, PAJARONOCANTOR, GATO
+    PERRO, PAJAROCANTOR, PAJARONOCANTOR, GATO, PEZ
 }

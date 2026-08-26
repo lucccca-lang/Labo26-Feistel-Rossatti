@@ -40,13 +40,73 @@ public class Sistema {
         listaMasc.add(mascNueva);
     }
 
-    public String saludar(String nombreUsuario, Mascotas m1){
+    public String saludar(String nombre_usuario, String nombre_mascota){
+        String saludo = null;
+        Mascotas mascota = obtenerMascota(nombre_mascota);
 
-        if (nombreUsuario == m1.getDueño()){
-            return m1.saludo();
+        if (mascota == null) {
+            saludo = "Esa mascota no se encontro";
+        }
+
+        else {
+            if (mascota instanceof Pez) {
+                vidaPez(nombre_usuario, (Pez) mascota);
+
+            }
+
+
+            if (mascota.esDuenio(nombre_usuario)) {
+                saludo = mascota.saludar();
+            }
+
+            else if (!(mascota instanceof Pajaro)) {
+                saludo = mascota.saludar().toUpperCase() + "!";
+            }
+            saludo = repetirSaludo_Alegria(saludo, mascota);
+        }
+        return saludo;
+    }
+
+    public String repetirSaludo_Alegria(String saludo, Mascotas mascota){
+        String saludo_inicial = saludo;
+
+        if (mascota.getFelicidad() > 0){
+            for (int i = 0; i < mascota.getFelicidad() ; i++){
+                saludo = saludo + " " + saludo_inicial;
+            }
+        }
+
+        mascota.bajarFelicidad();
+
+        return saludo;
+    }
+
+    public void vidaPez(String dueño, Pez pez){
+        if (pez.getDueño()){
+            pez.restarVida();
         }
         else {
-            return ""
+            pez.morir();
         }
+
+        comprobarVidas(pez);
+    }
+
+    public void comprobarVidas(Pez pez){
+        if (pez.getVidas() <= 0){
+            eliminarMasc(pez);
+        }
+
+    }
+
+    public Mascotas obtenerMascota(String nombreMascota){
+        for (Mascotas mascota : listaMasc)
+        {
+            if (mascota.getNombre().equals(nombreMascota))
+            {
+                return mascota;
+            }
+        }
+        return null;
     }
 }

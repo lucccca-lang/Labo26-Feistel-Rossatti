@@ -11,4 +11,9 @@ public class Perro extends Mascotas {
     public String saludo() {
         return "guaf";
     }
+
+    @Override
+    public TipoMascota tipoMascota() {
+        return TipoMascota.PERRO;
+    }
 }
