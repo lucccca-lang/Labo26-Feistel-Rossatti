@@ -49,6 +49,11 @@ public abstract class Persona {
         this.numCelular = numCelular;
     }
 
+    public Persona(String nombre, LocalDate fechaNac) {
+        this.nombre = nombre;
+        this.fechaNac = fechaNac;
+    }
+
     public String getDireccion() {
         return direccion;
     }
