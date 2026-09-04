@@ -51,12 +51,12 @@ public class Sistema {
             int pesoNuevo;
 
             if (fecha1.isAfter(fecha2)){
-                pesoOriginal = p.getMediciones().get(fecha1).getPeso();
-                pesoNuevo = p.getMediciones().get(fecha2).getPeso();
+                pesoOriginal = p.getMedicion().get(fecha1).getPeso();
+                pesoNuevo = p.getMedicion().get(fecha2).getPeso();
             }
             else {
-                pesoOriginal = p.getMediciones().get(fecha2).getPeso();
-                pesoNuevo = p.getMediciones().get(fecha1).getPeso();
+                pesoOriginal = p.getMedicion().get(fecha2).getPeso();
+                pesoNuevo = p.getMedicion().get(fecha1).getPeso();
             }
 
             double porcentaje = ((double) (pesoOriginal - pesoNuevo) /pesoOriginal) * 0.1;
@@ -72,8 +72,8 @@ public class Sistema {
             int alturaOriginal;
             int alturaNuevo;
 
-            alturaOriginal = p.getMediciones().get(fecha1).getAltura();
-            alturaNuevo =p.getMediciones().get(fecha2).getAltura();
+            alturaOriginal = p.getMedicion().get(fecha1).getAltura();
+            alturaNuevo =p.getMedicion().get(fecha2).getAltura();
             double porcentaje = ((double) (alturaOriginal - alturaNuevo) /alturaOriginal) * 0.1;
 
             return "Porcentaje de crecimiento: " + porcentaje * 100 + "%";
@@ -85,10 +85,10 @@ public class Sistema {
 
     public Boolean corroborarFecha(LocalDate fecha1, LocalDate fecha2, Paciente p){
         if (fecha2 == null){
-            return p.getMediciones().containsKey(fecha1);
+            return p.getMedicion().containsKey(fecha1);
         }
         else {
-            return p.getMediciones().containsKey(fecha1) && p.getMediciones().containsKey(fecha2);
+            return p.getMedicion().containsKey(fecha1) && p.getMedicion().containsKey(fecha2);
         }
     }
 
