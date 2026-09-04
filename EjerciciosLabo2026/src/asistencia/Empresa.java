@@ -1,6 +1,7 @@
 package asistencia;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.Month;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -19,16 +20,14 @@ public class Empresa {
 
 
     public void buscarEmpleado(int numLegajo) {
-        for (Integer legajo : listaEmpleados.keySet()) {
-            if (legajo == numLegajo) {
-                System.out.println(listaEmpleados.get(numLegajo));
-            }
+        if (listaEmpleados.containsKey(numLegajo)) {
+            System.out.println(listaEmpleados.get(numLegajo));
         }
     }
 
     public void registrarIngreso(int numLegajo, Empleado empleado) {
         if (listaEmpleados.containsValue(empleado)) {
-            System.out.println("empleado ya esta registrado");
+            System.out.println("empleado ya esta registrado");            /*BIEN MAL ENTENDIDO*/
         } else {
             listaEmpleados.put(numLegajo, empleado);
         }
@@ -37,8 +36,8 @@ public class Empresa {
     public int porcentajeAsistenciaAño(int anio, Empleado empleado) {
         int asisTotal = 0;
 
-        for (Asistencia asistencia : empleado.getAsistencias()) {
-            if (asistencia.getFecha().getYear() == anio) {
+        for (LocalDateTime asistencia : empleado.getAsistencias()) {
+            if (asistencia.getYear() == anio) {
                 asisTotal++;
             }
         }
@@ -48,8 +47,8 @@ public class Empresa {
     public int porcentajeAsistenciaMensual(Month mes, Empleado empleado) {
         int asisTotal = 0;
 
-        for (Asistencia asistencia : empleado.getAsistencias()) {
-            if (asistencia.getFecha().getMonth() == mes) {
+        for (LocalDateTime asistencia : empleado.getAsistencias()) {
+            if (asistencia.getMonth() == mes) {
                 asisTotal++;
             }
         }
@@ -68,21 +67,17 @@ public class Empresa {
 
     }
 
-
     public void obtenerListaMas80EnAnio(int anio) {
         HashSet<Empleado> listaEmpMas80EnAnio = new HashSet<>();
 
         for (Map.Entry<Integer, Empleado> e : listaEmpleados.entrySet()) {
-            if (this.porcentajeAsistenciaAño(anio, e.getValue()) > 80) {
+            if (this.porcentajeAsistenciaAño(anio, e.getValue()) > 80) {         /*return hashset*/
                 listaEmpMas80EnAnio.add(e.getValue());
             } else {
                 System.out.println("el empleado no supero el 80% en el anio");
             }
         }
     }
+}
 
 
-static void main() {
-
-
-}}
