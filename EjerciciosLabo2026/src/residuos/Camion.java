@@ -47,12 +47,13 @@ public class Camion {
         this.tipoResAutorizado = tipoResAutorizado;
     }
 
-    public Camion(int patente, String marca, String modelo, int capMax, HashSet<TipoResiduo> tipoResAutorizado) {
+    public Camion(int patente, String marca, String modelo, int capMax, HashSet<TipoResiduo> tipoResAutorizado, int autonomia) {
         this.patente = patente;
         this.marca = marca;
         this.modelo = modelo;
         this.capMax = capMax;
         this.tipoResAutorizado = tipoResAutorizado;
+        Camion.autonomia = autonomia;
     }
 
 
