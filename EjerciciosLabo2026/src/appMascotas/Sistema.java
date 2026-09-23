@@ -5,7 +5,7 @@ import seresVivos.Persona;
 import java.util.ArrayList;
 
 public class Sistema {
-    private ArrayList<Mascotas> listaMasc;
+    /*private ArrayList<Mascotas> listaMasc;
 
 
     public void alta(String nombre, String dueño, TipoMascota tipo) {
@@ -108,5 +108,5 @@ public class Sistema {
             }
         }
         return null;
-    }
+    }*/
 }

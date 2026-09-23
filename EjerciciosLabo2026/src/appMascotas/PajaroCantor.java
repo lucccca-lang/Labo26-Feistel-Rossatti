@@ -1,7 +1,7 @@
 package appMascotas;
 
 public class PajaroCantor extends Pajaro{
-    private String canto;
+    /*private String canto;
 
     public String getCanto() {
         return canto;
@@ -18,5 +18,5 @@ public class PajaroCantor extends Pajaro{
     @Override
     public TipoMascota tipoMascota() {
         return TipoMascota.PAJAROCANTOR;
-    }
+    }*/
 }

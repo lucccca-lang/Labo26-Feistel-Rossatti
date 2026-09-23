@@ -2,7 +2,7 @@ package appMascotas;
 
 public abstract class Pajaro extends Mascotas {
 
-    public Pajaro(String nombre, String dueño, TipoMascota tipoMascota) {
+    /*public Pajaro(String nombre, String dueño, TipoMascota tipoMascota) {
         super(nombre, dueño, tipoMascota);
     }
 
@@ -11,5 +11,5 @@ public abstract class Pajaro extends Mascotas {
         return "pio";
     }
 
-
+*/
 }

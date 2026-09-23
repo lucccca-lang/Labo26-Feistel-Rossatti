@@ -1,9 +1,9 @@
 package appMascotas;
 
 public class Pez extends Mascotas{
-    private int vidas;
+  /*  private int vidas;
 
-    public Pez(String nombre, String dueño, TipoMascota tipoMascota) {
+    public Pez(String nombre, String dueño, TipoMascota tipoMascota, int vidas) {
         super(nombre, dueño, tipoMascota);
         this.vidas = 10;
     }
@@ -40,5 +40,5 @@ public class Pez extends Mascotas{
     @Override
     public String saludo() {
         return "";
-    }
+    }*/
 }

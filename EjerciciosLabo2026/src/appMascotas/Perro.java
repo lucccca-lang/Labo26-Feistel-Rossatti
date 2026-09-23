@@ -2,7 +2,7 @@ package appMascotas;
 
 public class Perro extends Mascotas {
 
-
+/*
     public Perro(String nombre, String dueño, TipoMascota tipoMascota) {
         super(nombre, dueño, tipoMascota);
     }
@@ -15,5 +15,5 @@ public class Perro extends Mascotas {
     @Override
     public TipoMascota tipoMascota() {
         return TipoMascota.PERRO;
-    }
+    }*/
 }

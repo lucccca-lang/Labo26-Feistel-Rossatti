@@ -1,7 +1,7 @@
 package appMascotas;
 
 public abstract class Mascotas {
-    private String nombre;
+ /*   private String nombre;
     private String dueño;
     private TipoMascota tipoMascota;
     private int felicidad;
@@ -38,6 +38,12 @@ public abstract class Mascotas {
         this.felicidad = felicidad;
     }
 
+    public Mascotas(String nombre, String dueño, TipoMascota tipoMascota) {
+        this.nombre = nombre;
+        this.dueño = dueño;
+        this.tipoMascota = tipoMascota;
+    }
+
     public abstract String saludo();
 
 
@@ -64,5 +70,5 @@ public abstract class Mascotas {
                 ", dueño='" + dueño + '\'' +
                 ", tipoMascota=" + tipoMascota +
                 '}';
-    }
+    }*/
 }
