@@ -41,4 +41,14 @@ public abstract class Sensor {
     }
 
     public abstract void dispararAlarma();
+
+    @Override
+    public String toString() {
+        return "Sensor{" +
+                "estado=" + estado +
+                ", valorReal=" + valorReal +
+                ", valorUmbral=" + valorUmbral +
+                ", fechaAdquirido=" + fechaAdquirido +
+                '}';
+    }
 }
