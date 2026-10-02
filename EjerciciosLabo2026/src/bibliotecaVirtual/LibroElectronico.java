@@ -2,12 +2,12 @@ package bibliotecaVirtual;
 
 public class LibroElectronico {
 
-    public String titulo;
-    public Genero genero;
-    public Autor autorLibro;
-    public String nombrePDF;
+    private String titulo;
+    private Genero genero;
+    private Autor autorLibro;
+    private String nombrePDF;
     public static int descargasDisp = 145;
-    public int descargasActuales;
+    private int descargasActuales;
 
     public String getTitulo() {
         return titulo;

@@ -6,8 +6,8 @@ import java.time.LocalDate;
 import java.util.HashSet;
 
 public class Usuario extends Persona {
-    public Membresia membresia;
-    public HashSet<LibroElectronico> librosDescargados;
+    private Membresia membresia;
+    private HashSet<LibroElectronico> librosDescargados;
 
     public Membresia getMembresia() {
         return membresia;

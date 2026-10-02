@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 
 public class Autor extends Persona {
-    public HashSet<LibroElectronico> listaBibliografia;
+    private HashSet<LibroElectronico> listaBibliografia;
 
     public HashSet<LibroElectronico> getBibliografia() {
         return listaBibliografia;
