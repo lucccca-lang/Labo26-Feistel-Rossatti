@@ -16,14 +16,14 @@ public class Main {
         sis1.getSensores().add(s1);
         sis1.getSensores().add(s2);
 
-        Scanner scanner = new Scanner(System.in);
+        Scanner entrada = new Scanner(System.in);
         System.out.print("Ingresa un numero desde 0 hasta "+ sis1.getSensores().size() + ":");
 
         boolean noTengoNumero = true;                                         //while
 
         while(noTengoNumero) {
             try {
-                int numero = scanner.nextInt();
+                int numero = entrada.nextInt();
                 System.out.println(sis1.getSensores().get(numero));
                 noTengoNumero = false;
             } catch (InputMismatchException e) {

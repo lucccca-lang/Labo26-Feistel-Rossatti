@@ -33,7 +33,7 @@ public class Pagina {
         componente.setPrecioVenta(componente.getPrecioVenta() + porcentaje);
     }
 
-    public Compra compra(Cliente cliente, MetodoPago metodo, Computadora computadora){
+    public Compra compra(Cliente cliente, MetodoPago metodo, Computadora computadora) throws NoIncluyeException, SinStockException{
         if (computadora.ComputadoraValida()){
             if (hayStock(computadora)){
                 Compra compra = new Compra (cliente, metodo, computadora);
@@ -42,14 +42,10 @@ public class Pagina {
                 return compra;
             }
             else {
-                System.out.println("No hay stock suficiente en la tienda");
-            }
+                throw new SinStockException("No hay suficiente stock en la tienda")     ;       }
         }
         else {
-            System.out.println("Le faltan componentes a la computadora");
-        }
-
-        return null;
+            throw new NoIncluyeException("No hay suficiente perisféricos disponibles")    ;    }
 
 
     }
@@ -125,7 +121,7 @@ public class Pagina {
         System.out.println(compra.detalleCompra());
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SinStockException, NoIncluyeException {
         Pagina sistema = new Pagina();
 
         Cliente cliente1 = new Cliente("Ana", "Lopez", 1111-1111);
@@ -176,6 +172,18 @@ public class Pagina {
         sistema.cantEntradaySalida(pc1);
 
         /*sistema.componenteMasVendido();*/
+
+        Computadora pc3 = new Computadora();
+        pc3.agregarComponente(tecladoLogi);
+        try {
+            System.out.println("Intentando comprar sin cumplir periféricos mínimos:");
+            sistema.compra(cliente1, efectivo, pc3);
+        } catch (NoIncluyeException e){
+            System.out.println(e.getMessage());
+        } catch (SinStockException e) {
+            System.out.println(e.getMessage());
+        }
+
 
 
     }

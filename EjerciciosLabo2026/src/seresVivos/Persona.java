@@ -9,6 +9,8 @@ public abstract class Persona {
     private int edad;
     private String direccion;
     private int numCelular;
+    private int DNI;
+    private String mail;
 
     public Persona(String nombre,String apellido, String direccion, LocalDate fechaNac){
         this.nombre = nombre;
@@ -54,6 +56,25 @@ public abstract class Persona {
         this.fechaNac = fechaNac;
     }
 
+    public Persona(String nombre, LocalDate fechaNac, int DNI, String mail) {
+        this.nombre = nombre;
+        this.fechaNac = fechaNac;
+        this.DNI = DNI;
+        this.mail = mail;
+    }
+
+    public Persona(String nombre, LocalDate fechaNac, int DNI) {
+        this.nombre = nombre;
+        this.fechaNac = fechaNac;
+        this.DNI = DNI;
+    }
+
+    public int getDNI() {
+        return DNI;
+    }
+    public void setDNI(int DNI) {
+        this.DNI = DNI;
+    }
     public String getDireccion() {
         return direccion;
     }
@@ -89,6 +110,12 @@ public abstract class Persona {
     }
     public void setNumCelular(int numCelular) {
         this.numCelular = numCelular;
+    }
+    public String getMail() {
+        return mail;
+    }
+    public void setMail(String mail) {
+        this.mail = mail;
     }
 
     public  void datosPersona(){
