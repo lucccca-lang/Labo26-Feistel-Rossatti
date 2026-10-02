@@ -5,8 +5,8 @@ import objetos.Libro;
 import java.util.HashSet;
 
 public class Sistema {
-    HashSet<Usuario> usuariosRegis;
-    HashSet<LibroElectronico> listaLibros;
+    private HashSet<Usuario> usuariosRegis;
+    private HashSet<LibroElectronico> listaLibros;
 
     public HashSet<Usuario> getUsuariosRegis() {
         return usuariosRegis;
