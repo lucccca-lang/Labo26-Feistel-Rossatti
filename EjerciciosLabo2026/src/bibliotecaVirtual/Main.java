@@ -27,11 +27,11 @@ public class Main {
         sistema.agregarLibro(libro3);
         sistema.agregarLibro(libro4);
         sistema.agregarLibro(libro5);
-        u2.librosDescargados.add(libro5);
-        u2.librosDescargados.add(libro4);
-        u2.librosDescargados.add(libro3);
-        u2.librosDescargados.add(libro2);
-        u2.librosDescargados.add(libro1);
+        u2.getLibrosDescargados().add(libro5);
+        u2.getLibrosDescargados().add(libro4);
+        u2.getLibrosDescargados().add(libro3);
+        u2.getLibrosDescargados().add(libro2);
+        u2.getLibrosDescargados().add(libro1);
 
         libro.setDescargasActuales(145);
         libro.setDescargasActuales(0);
