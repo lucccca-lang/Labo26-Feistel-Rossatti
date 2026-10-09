@@ -69,6 +69,12 @@ public abstract class Persona {
         this.DNI = DNI;
     }
 
+    public Persona(String nombre, int DNI, String apellido) {
+        this.nombre = nombre;
+        this.DNI = DNI;
+        this.apellido = apellido;
+    }
+
     public int getDNI() {
         return DNI;
     }
