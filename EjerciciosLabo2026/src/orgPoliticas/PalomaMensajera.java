@@ -6,6 +6,10 @@ public class PalomaMensajera extends Ave implements Campanias{
 
     @Override
     public void enviarMensajeDirigente() {
-
+        if(aprendioMapa){
+        System.out.println("Lanzando un papelito que dice: Vote por el partido para un mejor futuro");}
+        else {
+            System.out.println("No sabe volar");
+        }
     }
 }

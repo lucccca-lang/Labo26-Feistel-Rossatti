@@ -4,16 +4,18 @@ import java.util.HashSet;
 
 public class Sistema {
     private HashSet<Prestable> listaObjPrestables;
-    private HashSet<Prestable> listaObjNoPrestables;
+    private HashSet<Ropa> listaRopa;
+    private HashSet<Textos> listaTextos;
 
+    public void agregarRopaPrestable (Ropa r){
+        if(r instanceof Prestable){
+            listaObjPrestables.add((Prestable) r);              // que pregunte si la ropa es prestable y ahi
+        }                                                       // castea a prestable para agregarlo a la lista
+    }
 
-    public void agregarObjeto(Prestable obj){
-        try{
-            obj.puedePrestarse();
-            listaObjPrestables.add(obj);
-        }
-        catch (NoSePuedePrestarException e){
-            listaObjNoPrestables.add(obj);
+    public void agregarTextoPrestable (Textos t){
+        if(t instanceof Prestable){
+            listaObjPrestables.add((Prestable) t);
         }
     }
 
@@ -22,8 +24,7 @@ public class Sistema {
     }
 
     public int cantObjNoPrestables(){
-        return listaObjNoPrestables.size();
+        return listaRopa.size() + listaTextos.size() - listaObjPrestables.size();
     }
-
 
 }
