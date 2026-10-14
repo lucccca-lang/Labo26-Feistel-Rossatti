@@ -1,6 +1,6 @@
 package orgPoliticas;
 
 public interface Campanias {
-    public void enviarMensajeDirigente();
+    public void enviarMensajeDirigente() throws NoSePuedeEnviarException;
 
 }

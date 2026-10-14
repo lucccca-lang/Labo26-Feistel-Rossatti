@@ -7,15 +7,17 @@ public class Sistema {
     private HashSet<Ropa> listaRopa;
     private HashSet<Textos> listaTextos;
 
-    public void agregarRopaPrestable (Ropa r){
-        if(r instanceof Prestable){
-            listaObjPrestables.add((Prestable) r);              // que pregunte si la ropa es prestable y ahi
+    public void agregarRopa (Ropa r){
+        this.listaRopa.add(r);
+        if(r instanceof Prestable){                              //que agregue a su lista
+            this.listaObjPrestables.add((Prestable) r);          // que pregunte si la ropa es prestable y ahi
         }                                                       // castea a prestable para agregarlo a la lista
     }
 
-    public void agregarTextoPrestable (Textos t){
+    public void agregarTexto (Textos t){
+        this.listaTextos.add(t);
         if(t instanceof Prestable){
-            listaObjPrestables.add((Prestable) t);
+            this.listaObjPrestables.add((Prestable) t);
         }
     }
 
