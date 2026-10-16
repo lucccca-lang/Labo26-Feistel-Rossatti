@@ -25,3 +25,12 @@ public class Trabajador extends Persona implements Campanias{
         }
     }
 }
+
+/*
+    EN MAIN
+        try{
+            enviarMensajeDirigente();
+        }
+        catch (NoSePuedeEnviarException e){
+            System.out.println(e.getMessage());        }
+    */

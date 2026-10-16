@@ -45,8 +45,6 @@ public class PartidoPol {
     public void hacerCampania() throws NoSePuedeEnviarException {
         for(Campanias c : listaEnviaMensajes){
             c.enviarMensajeDirigente();
-            System.out.println("Vote por el partido para un mejor futuro");
-
         }
     }
 }
