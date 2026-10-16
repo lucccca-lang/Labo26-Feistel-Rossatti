@@ -34,7 +34,7 @@ Z.tipo= "gordo";
 Z.daño = 15;
 Z.velocidad = 25;
 
-cout << "ingrese el nombre del jugador: ";
+cout << "ingrese el nombre del jugadorCurling: ";
 cin>> nombre;
 
 if(municion > 0){

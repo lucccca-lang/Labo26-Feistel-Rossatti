@@ -5,10 +5,10 @@ import java.util.ArrayList;
 public class Equipo {
     private String nombre;
     private ArrayList<Turno> disponibilidad;
-    private Jugador capitan;
-    private ArrayList<Jugador> lista;
+    private JugadorCurling capitan;
+    private ArrayList<JugadorCurling> lista;
 
-    public Equipo(String nombre ,ArrayList<Turno> disponibilidad, Jugador capitan, ArrayList<Jugador> lista) {
+    public Equipo(String nombre , ArrayList<Turno> disponibilidad, JugadorCurling capitan, ArrayList<JugadorCurling> lista) {
         this.nombre = nombre;
         this.disponibilidad = disponibilidad;
         this.capitan = capitan;
@@ -21,16 +21,16 @@ public class Equipo {
     public void setDisponibilidad(ArrayList<Turno> disponibilidad) {
         this.disponibilidad = disponibilidad;
     }
-    public Jugador getCapitan() {
+    public JugadorCurling getCapitan() {
         return capitan;
     }
-    public void setCapitan(Jugador capitan) {
+    public void setCapitan(JugadorCurling capitan) {
         this.capitan = capitan;
     }
-    public ArrayList<Jugador> getLista() {
+    public ArrayList<JugadorCurling> getLista() {
         return lista;
     }
-    public void setLista(ArrayList<Jugador> lista) {
+    public void setLista(ArrayList<JugadorCurling> lista) {
         this.lista = lista;
     }
     public String getNombre() {
@@ -40,9 +40,9 @@ public class Equipo {
         this.nombre = nombre;
     }
 
-    public void agregarJugador(Jugador jugador) {
+    public void agregarJugador(JugadorCurling jugadorCurling) {
         if (cantJugadores() < 11) {
-            lista.add(jugador);
+            lista.add(jugadorCurling);
         }
     }
 
@@ -52,8 +52,8 @@ public class Equipo {
 
     public boolean comprobarEquipo() {
         boolean valido = true;
-        for (Jugador lista : this.lista) {
-            for (Jugador lista1 :this.lista) {
+        for (JugadorCurling lista : this.lista) {
+            for (JugadorCurling lista1 :this.lista) {
                 if (lista.getNumero_de_camiseta() == lista1.getNumero_de_camiseta() && (!lista.equals(lista1))) {
                     valido = false;
                 }

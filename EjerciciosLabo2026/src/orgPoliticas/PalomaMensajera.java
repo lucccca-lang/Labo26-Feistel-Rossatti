@@ -14,11 +14,3 @@ public class PalomaMensajera extends Ave implements Campanias{
     }
 }
 
-      /*
-    EN MAIN
-        try{
-            enviarMensajeDirigente();
-        }
-        catch (NoSePuedeEnviarException e){
-            System.out.println(e.getMessage());        }
-    */

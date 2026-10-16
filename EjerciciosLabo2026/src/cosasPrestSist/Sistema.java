@@ -8,7 +8,7 @@ public class Sistema {
     private HashSet<Textos> listaTextos;
 
     public void agregarRopa (Ropa r){
-        this.listaRopa.add(r);
+        this.listaRopa.add(r);                                    //MAS QUE NADA PARA AGREGAR A LISTAS YA QUE SI HAY METODOS LO HARIA CADA UNO
         if(r instanceof Prestable){                              //que agregue a su lista
             this.listaObjPrestables.add((Prestable) r);          // que pregunte si la ropa es prestable y ahi
         }                                                       // castea a prestable para agregarlo a la lista

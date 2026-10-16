@@ -1,6 +1,6 @@
 package orgPoliticas;
 
-public class Ave {
+public abstract class Ave {
     private String color, nombre, especie;
 
 

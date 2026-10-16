@@ -43,8 +43,17 @@ public class PartidoPol {
     }
 
     public void hacerCampania() throws NoSePuedeEnviarException {
-        for(Campanias c : listaEnviaMensajes){
-            c.enviarMensajeDirigente();
+        for(Campanias c : listaEnviaMensajes){                              //el throws va pq en la interfaz esta el throws
+            c.enviarMensajeDirigente();                                // y tmb pq el metodo hace throws throw adentro del metodo
         }
     }
 }
+
+/*MAIN
+        try{
+            hacerCampania();
+        }
+        catch (NoSePuedeEnviarException e){
+            System.out.println(e.getMessage());        }
+
+ */

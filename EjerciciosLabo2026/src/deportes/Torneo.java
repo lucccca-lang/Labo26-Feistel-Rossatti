@@ -68,31 +68,31 @@ public class Torneo {
 
     public static void main(String[] args) {
         /*Equipo 1*/
-        Jugador jugador1 = new Jugador("aaaa","aaa", LocalDate.of(1999,10,10),10);
-        Jugador jugador2 = new Jugador("bbbb","bbb",LocalDate.of(1999,2,4),1);
-        Jugador jugador3 = new Jugador("cccc","ccc",LocalDate.of(1999,3,2),1);
-        ArrayList<Jugador>lista = new ArrayList<>();
+        JugadorCurling jugadorCurling1 = new JugadorCurling("aaaa","aaa", LocalDate.of(1999,10,10),10);
+        JugadorCurling jugadorCurling2 = new JugadorCurling("bbbb","bbb",LocalDate.of(1999,2,4),1);
+        JugadorCurling jugadorCurling3 = new JugadorCurling("cccc","ccc",LocalDate.of(1999,3,2),1);
+        ArrayList<JugadorCurling>lista = new ArrayList<>();
         ArrayList<Turno>disp1 = new ArrayList<>();
-        lista.add(jugador1);
-        lista.add(jugador2);
-        lista.add(jugador3);
+        lista.add(jugadorCurling1);
+        lista.add(jugadorCurling2);
+        lista.add(jugadorCurling3);
         disp1.add(Turno.MAÑANA);
         disp1.add(Turno.TARDE);
         disp1.add(Turno.NOCHE);
 
         //Equipo 2
-        Jugador jugador4 = new Jugador("dddd","ddd", LocalDate.of(1999,10,10),10);
-        Jugador jugador5 = new Jugador("eeee","eee",LocalDate.of(1999,2,4),1);
-        Jugador jugador6 = new Jugador("ffff","fff",LocalDate.of(1999,3,2),1);
-        ArrayList<Jugador>lista1 = new ArrayList<>();
-        lista1.add(jugador4);
-        lista1.add(jugador5);
-        lista1.add(jugador6);
+        JugadorCurling jugadorCurling4 = new JugadorCurling("dddd","ddd", LocalDate.of(1999,10,10),10);
+        JugadorCurling jugadorCurling5 = new JugadorCurling("eeee","eee",LocalDate.of(1999,2,4),1);
+        JugadorCurling jugadorCurling6 = new JugadorCurling("ffff","fff",LocalDate.of(1999,3,2),1);
+        ArrayList<JugadorCurling>lista1 = new ArrayList<>();
+        lista1.add(jugadorCurling4);
+        lista1.add(jugadorCurling5);
+        lista1.add(jugadorCurling6);
         ArrayList<Turno>disp2 = new ArrayList<>();
         disp2.add(Turno.NOCHE);
 
-        Equipo equipo1 = new Equipo("AAA",disp1,jugador1,lista);
-        Equipo equipo2 = new Equipo("BBB",disp2,jugador4,lista1);
+        Equipo equipo1 = new Equipo("AAA",disp1, jugadorCurling1,lista);
+        Equipo equipo2 = new Equipo("BBB",disp2, jugadorCurling4,lista1);
         ArrayList<Equipo>equipos1 = new ArrayList<>();
         equipos1.add(equipo1);
         equipos1.add(equipo2);

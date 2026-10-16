@@ -19,18 +19,10 @@ public class Trabajador extends Persona implements Campanias{
     @Override
     public void enviarMensajeDirigente() throws NoSePuedeEnviarException {
         if(horarioLaboral){
-            System.out.println("Yo," + getNombre() + "te invito a que… Vote por el partido para un mejor futuro");}
+            System.out.println("Yo," + super.getNombre() + "te invito a que… Vote por el partido para un mejor futuro");}
         else{
             throw new NoSePuedeEnviarException("No se puede enviar porque no esta en su horario laboral");
         }
     }
 }
 
-/*
-    EN MAIN
-        try{
-            enviarMensajeDirigente();
-        }
-        catch (NoSePuedeEnviarException e){
-            System.out.println(e.getMessage());        }
-    */

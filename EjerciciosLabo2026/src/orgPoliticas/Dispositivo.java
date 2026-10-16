@@ -1,6 +1,6 @@
 package orgPoliticas;
 
-public class Dispositivo {
+public abstract class Dispositivo {
     private int numSerie;
     private String fabricante, modelo;
 }
