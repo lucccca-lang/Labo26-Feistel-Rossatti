@@ -1,6 +1,7 @@
 package clubFutbol;
 
 import java.time.LocalDate;
+import java.util.HashMap;
 import java.util.HashSet;
 
 public class DeCampo extends Jugador{
@@ -20,7 +21,7 @@ public class DeCampo extends Jugador{
         this.cantAsist = cantAsist;
     }
 
-    public DeCampo(String nombre, LocalDate fechaNac, HashSet<String> listaHistorialClubes, String provOrigen, Posicion posicion, HashSet<String> listaHistorialClubes1, int numCamiseta, int porcGolesConvert, int cantAsist) {
+    public DeCampo(String nombre, LocalDate fechaNac, HashMap<String, Integer> listaHistorialClubes, String provOrigen, Posicion posicion, HashSet<String> listaHistorialClubes1, int numCamiseta, int porcGolesConvert, int cantAsist) {
         super(nombre, fechaNac, listaHistorialClubes, provOrigen, posicion, listaHistorialClubes1, numCamiseta);
         this.porcGolesConvert = porcGolesConvert;
         this.cantAsist = cantAsist;
@@ -53,5 +54,11 @@ public class DeCampo extends Jugador{
         }
     }
 
-
+    @Override
+    public String toString() {
+        return super.getNombre() +
+                "porcGolesConvert=" + porcGolesConvert +
+                ", cantAsist=" + cantAsist +
+                '}';
+    }
 }

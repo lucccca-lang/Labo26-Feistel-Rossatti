@@ -1,6 +1,7 @@
 package clubFutbol;
 
 import java.time.LocalDate;
+import java.util.HashMap;
 import java.util.HashSet;
 
 public class Arquero extends Jugador{
@@ -21,7 +22,7 @@ public class Arquero extends Jugador{
         this.cantGolesRecib = cantGolesRecib;
     }
 
-    public Arquero(String nombre, LocalDate fechaNac, HashSet<String> listaHistorialClubes, String provOrigen, HashSet<String> listaHistorialClubes1, int numCamiseta, int porcAtajadas, int cantGolesRecib) {
+    public Arquero(String nombre, LocalDate fechaNac, HashMap<String, Integer> listaHistorialClubes, String provOrigen, HashSet<String> listaHistorialClubes1, int numCamiseta, int porcAtajadas, int cantGolesRecib) {
         super(nombre, fechaNac, listaHistorialClubes, provOrigen, Posicion.ARQUERO, listaHistorialClubes1, numCamiseta);
         this.porcAtajadas = porcAtajadas;
         this.cantGolesRecib = cantGolesRecib;
@@ -56,7 +57,7 @@ public class Arquero extends Jugador{
 
     @Override
     public String toString() {
-        return "Arquero{" +
+        return super.getNombre() +
                 "porcAtajadas=" + porcAtajadas +
                 ", cantGolesRecib=" + cantGolesRecib +
                 '}';

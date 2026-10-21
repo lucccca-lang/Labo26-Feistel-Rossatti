@@ -53,4 +53,12 @@ public class PrepFisico extends CuerpoTecnico{
             return false;
         }
     }
+
+    @Override
+    public String toString() {
+        return super.getNombre() +
+                "especialidad='" + especialidad + '\'' +
+                ", matricula=" + matricula +
+                '}';
+    }
 }

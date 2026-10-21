@@ -54,4 +54,13 @@ public class Entrenador extends CuerpoTecnico {
             return false;
         }
     }
+
+    @Override
+    public String toString() {
+        return super.getTituloProf()+ super.getAniosExp() +
+                "Entrenador{" +
+                "cantCampeonatosObt=" + cantCampeonatosObt +
+                ", licenciaProfVigente=" + licenciaProfVigente +
+                '}';
+    }
 }

@@ -31,7 +31,7 @@ public class Club {
 
     public void mostrarInfoContratada(){
         for(Integrante pers : listaIntegrantesAceptados){
-            pers.Tostring
+            pers.toString();
         }
     }
 

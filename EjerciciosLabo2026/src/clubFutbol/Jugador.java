@@ -8,7 +8,6 @@ public abstract class  Jugador extends Integrante{
 
     private String ProvOrigen;
     private Posicion posicion;
-    private HashSet<String> ListaHistorialClubes;
     private int numCamiseta;
 
     public String getProvOrigen() {
@@ -23,12 +22,6 @@ public abstract class  Jugador extends Integrante{
     public void setPosicion(Posicion posicion) {
         this.posicion = posicion;
     }
-    public HashMap<String, Integer> getListaHistorialClubes() {
-        return ListaHistorialClubes;
-    }
-    public void setListaHistorialClubes(HashSet<String> listaHistorialClubes) {
-        ListaHistorialClubes = listaHistorialClubes;
-    }
     public int getNumCamiseta() {
         return numCamiseta;
     }
@@ -40,7 +33,6 @@ public abstract class  Jugador extends Integrante{
         super(nombre, fechaNac, listaHistorialClubes);
         ProvOrigen = provOrigen;
         this.posicion = posicion;
-        ListaHistorialClubes = listaHistorialClubes1;
         this.numCamiseta = numCamiseta;
     }
 
