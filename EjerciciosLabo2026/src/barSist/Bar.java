@@ -49,8 +49,7 @@ public class Bar {
     }
 
 
-    public in
-    t cantBenefTragos(){
+    public int cantBenefTragos(){
         HashSet<BenefTrago> listaBenefTragos = new HashSet<>();
 
         for(Beneficio benef : listaBenefImplementados) {
