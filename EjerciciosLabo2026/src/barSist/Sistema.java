@@ -16,7 +16,7 @@ public class Sistema {
     public Diana masCantPuntajesDistintos(){
         Diana dianaMasPunt = null;
         for (Diana diana : listaDianas){
-            if(diana.getListaPuntajeFranja().size() > dianaMasPunt.getListaPuntajeFranja().size()){
+            if(dianaMasPunt == null || diana.cantPuntaje() > dianaMasPunt.cantPuntaje()){
                 dianaMasPunt = diana;
             }
         }

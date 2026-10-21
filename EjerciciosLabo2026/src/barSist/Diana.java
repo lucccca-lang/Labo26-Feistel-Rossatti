@@ -33,4 +33,8 @@ public abstract class Diana {
     }
 
     public abstract double calcularArea();
+
+    public int cantPuntaje(){
+        return listaPuntajeFranja.size();
+    }
 }

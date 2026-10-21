@@ -49,7 +49,7 @@ public class Bar {
     }
 
 
-    public int cantBenefTragos(){
+    /* public int cantBenefTragos(){
         HashSet<BenefTrago> listaBenefTragos = new HashSet<>();
 
         for(Beneficio benef : listaBenefImplementados) {
@@ -58,7 +58,16 @@ public class Bar {
             }
         }
         return listaBenefTragos.size();
-    }
+    }*/
 
+    public int cantBenefTragos(){
+        int cant = 0;
+        for(Beneficio benef : listaBenefImplementados) {
+            if(benef instanceof BenefTrago){                                //instance of para que sea escalable
+                cant++;
+            }
+        }
+        return cant;
+    }
 
 }
