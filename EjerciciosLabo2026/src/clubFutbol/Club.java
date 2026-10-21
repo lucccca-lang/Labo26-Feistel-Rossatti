@@ -6,7 +6,9 @@ public class Club {
     private String nombre;
     private HashSet<Integrante> listaIntegrantesAceptados;
 
-    public void contratar(Integrante persona) throws NoCumpleRequisitosExcepetion, YaTrabajoAcaException {
+
+
+    public void contratar(Integrante persona) throws YaTrabajoAcaException {
         persona.requisitos();
         if (persona.getListaHistorialClubes().containsKey(this.nombre)){
             throw new YaTrabajoAcaException("Ya estuvo en este club");
@@ -31,7 +33,7 @@ public class Club {
 
     public void mostrarInfoContratada(){
         for(Integrante pers : listaIntegrantesAceptados){
-            pers.toString();
+            System.out.println(pers);
         }
     }
 

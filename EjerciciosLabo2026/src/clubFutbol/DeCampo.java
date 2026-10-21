@@ -28,7 +28,7 @@ public class DeCampo extends Jugador{
     }
 
     @Override
-    public boolean requisitos() throws NoCumpleRequisitosExcepetion {
+    public boolean requisitos()  {
         try{
             if(!(this.porcGolesConvert > 30 && this.cantAsist > 10)){
                 throw new NoCumpleRequisitosExcepetion("No cumple con los requisitos");

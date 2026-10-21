@@ -7,6 +7,12 @@ public class Sistema {
     private HashSet<Diana> listaDianas;
     private HashSet<Beneficio> listaBeneficios;
 
+    public Sistema(HashSet<Bar> listaBares, HashSet<Diana> listaDianas, HashSet<Beneficio> listaBeneficios) {
+        this.listaBares = listaBares;
+        this.listaDianas = listaDianas;
+        this.listaBeneficios = listaBeneficios;
+    }
+
     public Diana masCantPuntajesDistintos(){
         Diana dianaMasPunt = null;
         for (Diana diana : listaDianas){

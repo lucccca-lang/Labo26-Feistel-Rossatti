@@ -46,7 +46,7 @@ public class Sistema {
         }
     }
 
-    public void tomarPrestadoLibro(LibroElectronico libroElec, Usuario u1) throws LimitePrestamosAlcanzadosException{
+   /* public void tomarPrestadoLibro(LibroElectronico libroElec, Usuario u1) throws LimitePrestamosAlcanzadosException{
         if(libroElec.getDescargasActuales() < LibroElectronico.descargasDisp){
             u1.librosDescargados.add(libroElec);
             libroElec.setDescargasActuales(libroElec.getDescargasActuales()+1);
@@ -54,9 +54,9 @@ public class Sistema {
         else {
             throw new LimitePrestamosAlcanzadosException("No quedan mas descargas disponibles para este libro");
         }
-    }
+    }*/
 
-    public void verificarLimMembresia (Usuario u1, LibroElectronico l1) throws MembresiaException{
+   /* public void verificarLimMembresia (Usuario u1, LibroElectronico l1) throws MembresiaException{
         if(u1.getLibrosDescargados().size() < u1.getMembresia().getLimiteLibro()){
             u1.librosDescargados.add(l1);
             l1.setDescargasActuales(l1.getDescargasActuales()+1);
@@ -64,7 +64,7 @@ public class Sistema {
         else {
             throw new MembresiaException("ya alcanzo el limite de prestamos");
         }
-    }
+    }*/
 
 
 

@@ -28,7 +28,7 @@ public class PrepFisico extends CuerpoTecnico{
     }
 
     @Override
-    public boolean requisitos() throws NoCumpleRequisitosExcepetion {
+    public boolean requisitos() {
         try{
             if(!(this.matricula && super.getAniosExp() > 2)){
                 throw new NoCumpleRequisitosExcepetion("No cumple los requisitos");

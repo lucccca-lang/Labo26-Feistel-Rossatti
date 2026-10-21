@@ -23,7 +23,7 @@ public abstract class Integrante extends Persona {
         listaHistorialClubes = listaHistorialClubes;
     }
 
-    public abstract boolean requisitos() throws NoCumpleRequisitosExcepetion;
-    public abstract boolean reqRenovacion() throws NoCumpleRenovacionException;
+    public abstract boolean requisitos() ;
+    public abstract boolean reqRenovacion() ;
     public abstract String toString();
 }

@@ -29,7 +29,7 @@ public class Entrenador extends CuerpoTecnico {
     }
 
     @Override
-    public boolean requisitos() throws NoCumpleRequisitosExcepetion {
+    public boolean requisitos()  {
         try{
             if(!(this.licenciaProfVigente && super.getAniosExp() > 3)){
                 throw new NoCumpleRequisitosExcepetion("No cumple los requisitos");
