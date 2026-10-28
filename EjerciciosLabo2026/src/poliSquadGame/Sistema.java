@@ -41,12 +41,13 @@ public class Sistema {
         }
     }
 
-    public void jugarPrueba(Jugador jug, Jugable pru, String rec) {
-        if (this.verificarPrueba(jug, pru) && pru.corroborarRiesgo(jug)) {
-            pru.consumirEnergia(jug);
-            jug.corroborarEliminacion();
-            jug.terminarPrueba(rec);
-        }
+    public void jugarPrueba(Jugador jug, Jugable pru) {
+        jug.realizarPrueba(pru);
+        //if (this.verificarPrueba(jug, pru) && pru.corroborarRiesgo(jug)) {
+        //    pru.consumirEnergia(jug);
+        //    jug.corroborarEliminacion();
+        //    jug.terminarPrueba(rec);
+        //}
     }
 
 

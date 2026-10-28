@@ -57,9 +57,9 @@ public class Main {
             j1.registrarPruebaFav(pa2);
         }
         catch (PruebaYaElegidaActualmenteExcepcion e){
-            e.getMessage();
+            System.out.println(e.getMessage());
         }
 
-        sist.jugarPrueba(j2, pa2, "Elefante de peluche");
+        sist.jugarPrueba(j2, pa2);
     }
 }

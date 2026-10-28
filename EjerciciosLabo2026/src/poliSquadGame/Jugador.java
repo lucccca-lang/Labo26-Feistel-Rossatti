@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 
-public class    Jugador {
+public class  Jugador {
     private String nombre;
     private int numParticipante;
     private int energia;
@@ -96,6 +96,15 @@ public class    Jugador {
     public void verificacion() throws NoTieneEnergiaException{
         if(this.energia <= 20){
             throw new NoTieneEnergiaException("El jugador " + this.nombre + " no tiene suficiente energia");
+        }
+    }
+
+    public void realizarPrueba(Jugable prueba){
+        try {
+            verificacion();
+            prueba.consumirEnergia(this);
+        } catch(NoTieneEnergiaException e){
+            System.out.println("NO TIENE ENERGIA");
         }
     }
 
