@@ -32,7 +32,7 @@ public class Revista extends Textos implements Prestable{
         } catch (NoSePuedePrestarException  e) {
             System.out.println(e.getMessage());
         }
-        }
+    }
 
 
 
