@@ -7,6 +7,7 @@ import java.util.HashSet;
 public class  Jugador {
     private String nombre;
     private int numParticipante;
+    private static int energiaInicial = 100;
     private int energia;
     private HashSet<String> listaHistorialRecompensas;
     private int nivelRiesgo;
@@ -82,7 +83,7 @@ public class  Jugador {
                    HashMap<Prueba, String> listaPruebasDescrip, ArrayList<Prueba> listaHistorialPruebasFav) {
         this.nombre = nombre;
         this.numParticipante = numParticipante;
-        this.energia = 100;
+        this.energia = energiaInicial;
         this.listaHistorialRecompensas = listaHistorialRecompensas;
         this.nivelRiesgo = 0;
         this.listaPruebasDescrip = listaPruebasDescrip;
