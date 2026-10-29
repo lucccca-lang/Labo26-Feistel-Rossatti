@@ -27,6 +27,9 @@ public abstract class Ayudante extends Persona {
         this.taller = taller;
     }
 
-    public abstract String prepararEstacionTrabajo();
+    public abstract void prepararEstacionTrabajo();
+
+    public abstract void fabricar(Regalo reg, String material) throws ExcedioElTiempoDispoException,
+            NoTieneMaterialesNecesariosException, UsoDeMaterialProhibidoException, RegaloNoLePerteneceException;
 
 }

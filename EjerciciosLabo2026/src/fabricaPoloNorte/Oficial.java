@@ -22,7 +22,7 @@ public class Oficial extends Ayudante{
 
 
     @Override
-    public String prepararEstacionTrabajo() {
+    public void prepararEstacionTrabajo() {
         HashSet<String> listaMaterialesMayorUno = new HashSet<>();
 
         for (Map.Entry<String, Integer> lista : listaStockMateriales.entrySet()){
@@ -30,6 +30,19 @@ public class Oficial extends Ayudante{
                 listaMaterialesMayorUno.add(lista.getKey());
             }
         }
-        return "Estos son los materiales cuyo stock es mayor a 1 " + this.listaStockMateriales;
+        System.out.println("Estos son los materiales cuyo stock es mayor a 1 " + listaMaterialesMayorUno);
     }
+
+    @Override
+    public void fabricar(Regalo reg, String material) throws ExcedioElTiempoDispoException, NoTieneMaterialesNecesariosException, UsoDeMaterialProhibidoException, RegaloNoLePerteneceException {
+        if(!(reg.getTamanio().equals(Tamanio.MEDIANO))){
+            throw new RegaloNoLePerteneceException("El regalo " + reg.getNombre() + "no le pertenece");
+        }
+        else if(!(listaStockMateriales.containsKey(material) && listaStockMateriales.get(material) > 1)){
+            throw new NoTieneMaterialesNecesariosException("Operacion parada, no tiene los materiales necesarios");
+        }
+        System.out.println("El regalo " + reg.getNombre() + " fue fabricado con exito");
+    }
+
+
 }

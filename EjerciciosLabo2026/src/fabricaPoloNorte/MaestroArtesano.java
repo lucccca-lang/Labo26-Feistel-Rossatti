@@ -16,15 +16,23 @@ public class MaestroArtesano extends Ayudante{
         this.tiempoProduccion = tiempoProduccion;
     }
 
-    public MaestroArtesano(String nombre, String apellido, LocalDate fechaNac, String aldeaOrigen, Taller taller, int tiempoProduccion) {
+    public MaestroArtesano(String nombre, String apellido, LocalDate fechaNac, String aldeaOrigen, Taller taller) {
         super(nombre, apellido, fechaNac, aldeaOrigen, taller);
         this.tiempoProduccion = tiempoMaxProduccion;
     }
 
 
     @Override
-    public String prepararEstacionTrabajo() {
+    public void prepararEstacionTrabajo() {
         setTiempoProduccion(this.tiempoProduccion - 10);
-        return "Luego de calentar mis herramientas me quedan" + this.tiempoProduccion;
+        System.out.println("Luego de calentar mis herramientas me queda " + this.tiempoProduccion + " de energia");
+    }
+
+    @Override
+    public void fabricar(Regalo reg, String material) throws ExcedioElTiempoDispoException, NoTieneMaterialesNecesariosException, UsoDeMaterialProhibidoException, RegaloNoLePerteneceException {
+        if(this.tiempoProduccion <= 0){
+            throw new ExcedioElTiempoDispoException("Operacion parada, excedio su tiempo disponible de trabajo");
+        }
+        System.out.println("El regalo " + reg.getNombre() + " fue fabricado con exito");
     }
 }
