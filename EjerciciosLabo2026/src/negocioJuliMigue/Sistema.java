@@ -23,13 +23,12 @@ public class Sistema {
 
 
     public void nuevaPreparacion(Preparacion preparacion, int cantNueva) throws IngredienteInvalidoExeception{
-        if(preparacion.verificarIngredientes() && this.listaPreparaciones.containsKey(preparacion)){
-            this.listaPreparaciones.put(preparacion, this.listaPreparaciones.get(preparacion) + cantNueva);
-            System.out.println("Se ha agregado correctamete la preparacion");
+        if(listaPreparaciones.isEmpty() || !(listaPreparaciones.containsKey(preparacion))) {
+            listaPreparaciones.put(preparacion, cantNueva);
         }
         else if(preparacion.verificarIngredientes()){
-            this.listaPreparaciones.put(preparacion, cantNueva);
-            System.out.println("Se ha agregado correctamente la preparacion");
+            this.listaPreparaciones.put(preparacion, this.listaPreparaciones.get(preparacion) + cantNueva);
+            System.out.println("Se ha agregado correctamete la preparacion");
         }
         else {
             throw new IngredienteInvalidoExeception("Ingrediente con cantidades invalidas");
